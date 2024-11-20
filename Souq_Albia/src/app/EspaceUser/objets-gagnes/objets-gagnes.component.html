@@ -1,0 +1,231 @@
+<div class="right" *ngFor="let auction of auctions">
+  <div class="titre">
+    <h2>Objets Gagnés</h2>
+  </div>
+  <div *ngIf="auction.NombreEncheres > 0; else noAuctions">
+    <div class="top">
+      <p>{{ auction.NombreEncheres }} Commandes</p>
+      <div class="dpn">
+        <p>Voir :</p>
+        <div class="dropdown">
+          <button class="dropdown-btn">Choisir</button>
+          <div class="dropdown-content">
+            <a href="#">Le plus ancien</a>
+            <a href="#">Nouveauté</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="left">
+        <span>
+          <p>Name:</p>
+          <p>{{ auction.nom }}</p>
+        </span>
+        <span>
+          <p>Prix Total:</p>
+          <p>{{ auction.prixactuel }} DH</p>
+        </span>
+        <span>
+          <p>Date de vente:</p>
+          <p>{{ auction.dateFin | date: 'dd/MM/yyyy' }}</p>
+        </span>
+      </div>
+
+      <div class="right">
+        <button *ngIf="!isPurchased" (click)="openPayment()">Passer à la caisse</button>
+        <button *ngIf="!isPurchased" (click)="openChat(auction.vendeur_id)">Contactez le Vendeur</button>
+        <button *ngIf="!isPurchased" (click)="openComment(auction.id)">Laissez un commentaire</button>
+
+        <p *ngIf="isPurchased" class="purchase-confirmation">Vous avez déjà acheté cet article.</p>
+
+        <div *ngIf="isPurchased" class="transaction-details">
+          <p class="purchase-confirmation">Transaction réussie ! Merci pour votre achat.</p>
+          <p>Vous pouvez contacter le vendeur pour plus d'informations.</p>
+          <button *ngIf="isPurchased" (click)="openChat(auction.vendeur_id)">Contactez le Vendeur</button>
+        </div>
+      </div>
+
+      <!-- Chat Popup -->
+      <div class="chat-popup" *ngIf="isChatVisible" (click)="onBackgroundClick($event)">
+        <div class="chat-content" (click)="$event.stopPropagation()">
+          <h2>Chat avec le vendeur</h2>
+          <div class="messages">
+            <div *ngFor="let message of chatMessages">
+              <p><strong>{{ message.senderName || "Inconnu" }}:</strong> {{ message.message }}</p>
+              <p class="timestamp">{{ message.date_envoi | date:'short' }}</p>
+            </div>
+          </div>
+          <textarea [(ngModel)]="newMessage" placeholder="Tapez votre message ici..."></textarea>
+          <input type="file" (change)="onFileSelected($event)" />
+          <button (click)="sendMessage()">Envoyer</button>
+          <button (click)="closeChat()">Fermer</button>
+        </div>
+      </div>
+
+      <!-- Payment Popup -->
+      <div class="payment-popup" *ngIf="isPaymentVisible" (click)="onBackgroundClick($event)">
+        <div class="payment-content" (click)="$event.stopPropagation()">
+          <h2>Finalisation de la commande</h2>
+          <form (submit)="submitPayment($event)">
+            <div class="existing-addresses">
+              <p>Livrer à:</p>
+              <div *ngFor="let addr of addresses; let i = index">
+                <div class="span">
+                  <input
+                    type="radio"
+                    name="selectedAddress"
+                    [value]="addr"
+                    [(ngModel)]="selectedAddress"
+                    required
+                  />
+                  <p>{{ addr }}</p>
+                  <button type="button" (click)="editAddress(i)">Modifier</button>
+                </div>
+                <div *ngIf="editingIndex === i">
+                  <input
+                    type="text"
+                    [(ngModel)]="editedAddress"
+                    name="editedAddress-{{ i }}"
+                  />
+                  <button type="button" (click)="saveAddress(i)">Sauvegarder</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="address-section">
+              <button type="button" (click)="showAddressInput = !showAddressInput">
+                Ajouter une nouvelle adresse
+              </button>
+              <div *ngIf="showAddressInput">
+                <label for="newAddress">Nouvelle adresse:</label>
+                <input
+                  type="text"
+                  id="newAddress"
+                  name="newAddress"
+                  [(ngModel)]="newAddress"
+                  required
+                />
+                <button type="button" (click)="addNewAddress()">Ajouter</button>
+              </div>
+            </div>
+
+            <div class="PayWith">
+              <p>Payer avec:</p>
+              <label>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="paypal"
+                  [(ngModel)]="paymentMethod"
+                  required
+                />
+                PayPal
+                <img
+                  src="/assets/paypal.png"
+                  alt="PayPal"
+                  class="payment-logo"
+                  width="20px"
+                />
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="debitCard"
+                  [(ngModel)]="paymentMethod"
+                  required
+                />
+                Carte de crédit ou de débit
+                <img
+                  src="/assets/credit-card.png"
+                  alt="Carte de crédit"
+                  class="payment-logo"
+                  width="20px"
+                />
+              </label>
+            </div>
+
+            <div *ngIf="paymentMethod === 'debitCard'" class="DebitCard">
+              <div>
+                <div>
+                  <label for="cardNumber">Numéro de carte:</label>
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    name="cardNumber"
+                    placeholder="1234 5678 9012 3456"
+                    [(ngModel)]="cardNumber"
+                    required
+                    style="width: 200px;"
+                  />
+                </div>
+                <div>
+                  <label for="cvv">CVV:</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    [(ngModel)]="cvv"
+                    required
+                    placeholder="123"
+                    style="width:50px;"
+                  />
+                </div>
+              </div>
+              <label for="expiryDate">Date d’expiration:</label>
+              <input
+                type="text"
+                id="expiryDate"
+                name="expiryDate"
+                [(ngModel)]="expiryDate"
+                required
+                placeholder="12/24"
+                style="width:50px;"
+              />
+            </div>
+
+            <div *ngIf="paymentMethod === 'paypal'">
+              <div id="paypal-button-container"></div>
+            </div>
+
+            <button type="submit">Confirmer et Payer</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Comment Popup -->
+      <div class="comment-popup" *ngIf="isCommentVisible" (click)="onBackgroundClick($event)">
+        <div class="comment-content" (click)="$event.stopPropagation()">
+          <h2>Donnez-nous votre avis !</h2>
+          <form (submit)="submitComment()">
+            <div class="btns">
+              <button *ngFor="let star of stars" (click)="rate(star)" [class.active]="star <= currentRating">&#9733;</button>
+            </div>
+
+            <div class="comment">
+              <label for="comment">Partagez votre expérience:</label>
+              <textarea
+                id="comment"
+                name="comment"
+                [(ngModel)]="comment"
+                required
+                placeholder="Dis nous à propos de cela....."
+                style="width:80%;height:250px;border-radius:20px;border:1px solid var(--primary-color);padding-left:10px;padding-right:10px;padding-top:10px;align-self:center;"
+              ></textarea>
+            </div>
+            <button type="submit">Poster</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template for no auctions -->
+  <ng-template #noAuctions>
+    <div class="no-auctions-message">
+      <p>Il n'y a aucune enchère pour le moment.</p>
+    </div>
+  </ng-template>
+</div>

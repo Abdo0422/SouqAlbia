@@ -1,0 +1,194 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="#">Souq Albia</a>
+    <span> > </span>
+    <a href="#">{{ categoryName }}</a>
+    <span> > </span>
+    <a href="#">{{ subcategoryName }}</a>
+    <span> > </span>
+    <a href="#" class="current">{{ selectedEnchere?.nom }}</a>
+  </div>
+
+  <div class="divimg">
+    <div class="Produit">
+      <div class="Images">
+        <div class="small-images">
+          <img src="{{ selectedEnchere?.image }}" width="34px" height="30px" />
+          <img src="{{ selectedEnchere?.image }}" width="34px" height="30px" />
+          <img src="{{ selectedEnchere?.image }}" width="34px" height="30px" />
+        </div>
+        <div class="big-image">
+          <img
+            src="{{ selectedEnchere?.image }}"
+            width="176px"
+            height="298px"
+          />
+        </div>
+      </div>
+      <div class="text">
+        <h3>{{ selectedEnchere?.nom }}</h3>
+        <input
+          type="hidden"
+          id="souscategorieId"
+          value="{{ selectedEnchere?.id_sous_categorie }}"
+        />
+        <br />
+        <span>
+          <h4>Enchère actuelle:</h4>
+          <p>
+            {{ selectedEnchere?.prixactuel }} DH ({{ selectedEnchere?.NumBids }}
+            offres)
+          </p>
+        </span>
+
+        <div *ngIf="isAuctionFinished">
+          <p class="auction-ended">
+            This auction has ended. No further offers can be placed.
+          </p>
+        </div>
+
+        <form *ngIf="!isAuctionFinished" (ngSubmit)="submitOffer()">
+          <div class="form-group">
+            <label for="offre">Votre offre:</label>
+            <div class="input-container">
+              <input
+                type="number"
+                id="offre"
+                name="offre"
+                min="0"
+                step="0.01"
+                [(ngModel)]="offer"
+                placeholder="Entrez une offre"
+                required
+              />
+              <span class="currency">DH</span>
+            </div>
+          </div>
+          <input type="submit" value="Valider" />
+        </form>
+        <br />
+        <span class="buttons">
+          <button (click)="addToWatchlist()">
+            <img
+              src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png"
+              width="40px"
+            />Ajouter à la liste de surveillance
+          </button>
+          <button (click)="shareContent()">
+            <img src="" width="16px" class="share" />Partagez
+          </button>
+        </span>
+        <br />
+        <span>
+          <h4>État :</h4>
+          <p>{{ selectedEnchere?.state }}</p>
+        </span>
+        <span>
+          <h4>Localisation:</h4>
+          <p>{{ selectedEnchere?.localisation }}</p>
+        </span>
+        <span>
+          <h4>Présenté par :</h4>
+          <span class="user-info">
+            <img src="" width="20px" />
+            <p>{{ selectedEnchere?.vendeur_nom }}</p>
+          </span>
+          <div class="userlinks">
+            <div class="link">
+              <img src="assets/User.png" width="15px" />
+              <a (click)="openChat(vendeurID)">Discuter avec le vendeur</a>
+            </div>
+
+          </div>
+        </span>
+        <br />
+        <span>
+          <h4>Temps Restants:</h4>
+          <p class="redtext" *ngIf="selectedEnchere">
+            {{ getRemainingTime(selectedEnchere.dateFin) }}
+          </p>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="secondsection">
+    <img
+      src="https://static-00.iconduck.com/assets.00/warning-icon-512x511-3vl9qoze.png"
+      width="20px"
+      height="20px"
+      (click)="showReportDialog()"
+    />
+    <p (click)="showReportDialog()" style="cursor: pointer">
+      Signaler cet article
+    </p>
+  </div>
+
+  <!-- Report Dialog -->
+  <div *ngIf="isReportVisible" class="overlay">
+    <div class="report-dialog">
+      <h3>Signaler cet article</h3>
+      <textarea
+        [(ngModel)]="reportReason"
+        placeholder="Raison pour le signalement"
+      ></textarea>
+      <div style="display: flex; justify-content: space-between; gap: 10px">
+        <button (click)="reportItem()">Envoyer</button>
+        <button (click)="isReportVisible = false">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ligne"></div>
+  <div class="ProduitDesc">
+    <h3>Description</h3>
+    <p>
+      {{ selectedEnchere?.description }}
+    </p>
+  </div>
+  <h3 class="category-title">
+    Découvrez plus d'articles dans la catégorie {{ subcategoryName }}
+  </h3>
+  <div class="divlist">
+    <div class="list1">
+      <div *ngFor="let enchere of enchereList" class="Produit1">
+        <a (click)="onSelectEnchere(enchere)" style="cursor: pointer;">
+          <img [src]="enchere.image" alt="Enchere Image" />
+          <h4>{{ getRemainingTime(enchere.dateFin) }}</h4>
+          <p class="desc">{{ enchere.nom }}</p>
+          <span>
+            <p class="price">{{ enchere.prixactuel }} DH</p>
+            <em>({{ enchere.NumBids }} Offres)</em>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Chat Popup -->
+  <div
+    class="chat-popup"
+    *ngIf="isChatVisible"
+    (click)="onBackgroundClick($event)"
+  >
+    <div class="chat-content" (click)="$event.stopPropagation()">
+      <h2>Chat avec le vendeur</h2>
+      <div class="messages">
+        <div *ngFor="let message of chatMessages">
+          <p>
+            <strong>{{ message.senderName || "Acheteur" }}:</strong>
+            {{ message.lastMessage }}
+          </p>
+          <p class="timestamp">
+            {{ message.lastMessageTime | date : "short" }}
+          </p>
+        </div>
+      </div>
+      <textarea
+        [(ngModel)]="newMessage"
+        placeholder="Tapez votre message ici..."
+      ></textarea>
+      <input type="file" (change)="onFileSelected($event)" />
+      <button (click)="sendMessage()">Envoyer</button>
+      <button (click)="closeChat()">Fermer</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div id="categories-section" class="container">
+  <h2>Explorez Les catégories</h2>
+  <div class="both">
+    <div class="left">
+      <ul>
+        <li
+          *ngFor="let category of categories"
+          (click)="onSelectCategory(category)"
+        >
+          <a>{{ category.nom }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <div class="topsouscategorie">
+        <h3>{{ selectedCategory?.nom }}</h3>
+      </div>
+      <div class="list">
+        <div
+          class="souscategorie"
+          *ngFor="let sousCategorie of filteredSousCategories"
+        >
+          <a (click)="onSelectSousCategorie(sousCategorie)">
+            <img src="{{ sousCategorie.image }}" width="154px" />
+            <h3>{{ sousCategorie.nom }}</h3>
+            <em>{{ getNumberOfObjects(sousCategorie) }} Objets</em>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

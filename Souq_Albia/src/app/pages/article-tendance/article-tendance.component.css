@@ -1,0 +1,97 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.category-container, .subcategory-container, .trending-auctions {
+  margin-bottom: 40px;
+}
+
+.category-container, .subcategory-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.inactive {
+  opacity: 0.5; /* Makes the inactive enchères appear faded */
+  pointer-events: none; /* Optional: Disables interaction with inactive items */
+}
+.category-card, .subcategory-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover, .subcategory-card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-5px);
+}
+
+.category-card.active, .subcategory-card.selected {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.trending-auctions h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.auction-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s;
+}
+
+.auction-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.auction-image {
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.auction-details {
+  flex: 1;
+}
+
+.auction-details h4 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.auction-details p {
+  margin: 5px 0;
+  color: #666;
+  line-height: 1.5;
+}

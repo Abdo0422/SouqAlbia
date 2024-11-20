@@ -1,0 +1,99 @@
+<div class="right">
+  <div class="titre">
+    <h2>Messages</h2>
+  </div>
+  <div class="chatroom-container">
+    <div class="sidebar">
+      <div class="top">
+        <img src="assets/menu.png" width="30px" />
+        <h3>Souq Albia</h3>
+      </div>
+      <div class="bottom">
+        <button (click)="showAllUsers()">Tout</button>
+        <button (click)="showRecentUsers()">Récent</button>
+      </div>
+      <div class="user-list">
+        <div
+          *ngFor="let user of filteredUsers"
+          class="user"
+          (click)="selectUser(user)"
+        >
+          <img src="assets/User.png" width="40px" height="40px" />
+          <div class="user-info">
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.lastMessage }}</p>
+          </div>
+          <p class="last-message-time">{{ user.lastMessageTime | date:'shortDate' }}</p>
+        </div>
+        <div *ngIf="filteredUsers.length === 0">
+          <p>No messages now in chatroom.</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat-window">
+      <div *ngIf="selectedUser" class="chat-header">
+        <h2>Chatting with {{ selectedUser.name }}</h2>
+      </div>
+      <div *ngIf="selectedUser" class="messages">
+        <div *ngFor="let message of selectedUser?.messages">
+          <div class="message-container" [ngClass]="{'isSender': message.isSender, 'isReceiver': !message.isSender}">
+            <div class="message-content">
+              <p *ngIf="message.contenu">{{ message.contenu }}</p>
+              <div *ngIf="message.file_url" class="file-content">
+                <ng-container *ngIf="isImage(message.file_name)">
+                  <img
+                    [src]="message.file_url"
+                    class="message-image"
+                    (click)="openLightbox(message.file_url)"
+                    alt="Image"
+                  />
+                </ng-container>
+                <ng-container *ngIf="!isImage(message.file_name)">
+                  <a *ngIf="message.file_url" class="download-link" (click)="downloadFile(message.file_name, message.file_url)">
+                    <span class="download-icon">📥</span> Download File: {{ message.file_name }}
+                  </a>
+                </ng-container>
+              </div>
+            </div>
+            <p class="message-time">{{ message.time }}</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div *ngIf="lightboxUrl" class="lightbox">
+        <div class="lightbox-overlay" (click)="closeLightbox()"></div>
+        <div class="lightbox-content">
+          <img [src]="lightboxUrl" alt="Lightbox Image" />
+          <button (click)="closeLightbox()">Close</button>
+        </div>
+      </div>
+
+      <div *ngIf="selectedUser" class="message-input">
+        <label for="fileInput" class="file-label">
+          <img src="assets/add.png" width="25px" />
+        </label>
+        <input id="fileInput" type="file" (change)="handleFileInput($event)" />
+        <textarea #messageTextarea [(ngModel)]="newMessage" placeholder="Type your message here..."></textarea>
+        <button (click)="sendMessage()">
+          <img src="assets/send.png" width="30px" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- File popup -->
+  <div *ngIf="showFilePopup" class="file-popup">
+    <div class="file-popup-content">
+      <h4>File Selected</h4>
+      <p>Do you want to send this file?</p>
+      <button (click)="confirmSendFile()">Yes</button>
+      <button (click)="cancelSendFile()">No</button>
+    </div>
+  </div>
+</div>

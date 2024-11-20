@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label {
+        margin-bottom: 5px;
+    }
+    
+    input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    button {
+        padding: 10px;
+        background-color: #28a745;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    #response {
+        margin-top: 15px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Form</h1>
+        <form id="paymentForm">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+        
+            <label for="expiryDate">Expiry Date (MM/YYYY):</label>
+            <input type="text" id="expiryDate" name="expiryDate" required>
+        
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+        
+            <label for="amount">Amount (USD):</label>
+            <input type="number" id="amount" name="amount" required>
+        
+            <label for="acheteur_id">Acheteur ID:</label>
+            <input type="text" id="acheteur_id" name="acheteur_id" required>
+        
+            <label for="vendeur_id">Vendeur ID:</label>
+            <input type="text" id="vendeur_id" name="vendeur_id" required>
+        
+            <button type="submit">Submit Payment</button>
+        </form>
+        
+        <div id="response"></div>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+        cardNumber: formData.get('cardNumber'),
+        expiryDate: formData.get('expiryDate'),
+        cvv: formData.get('cvv'),
+        amount: formData.get('amount'),
+        acheteur_id: formData.get('acheteur_id'),
+        vendeur_id: formData.get('vendeur_id')
+    };
+
+            fetch('process-payement.php', { // Replace with the path to your PHP script
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('response').innerText = `Payment successful! Transaction ID: ${data.transactionId}`;
+                } else {
+                    document.getElementById('response').innerText = `Payment failed: ${data.error}`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('response').innerText = `Error: ${error.message}`;
+            });
+        });
+    </script>
+</body>
+</html>

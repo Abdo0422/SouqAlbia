@@ -1,0 +1,69 @@
+<div class="container">
+  <h1 class="page-title">Dernières Enchères</h1>
+
+  <div class="filter-container">
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      (input)="onFilterChange()"
+      placeholder="Rechercher..."
+      class="search-input"
+    >
+
+    <div class="filter-section">
+
+      <div class="filter-group">
+        <label for="minPrice">Prix minimum :</label>
+        <input
+          type="number"
+          id="minPrice"
+          [(ngModel)]="minPrice"
+          (input)="onFilterChange()"
+          placeholder="Prix minimum"
+          class="price-input"
+        >
+      </div>
+
+      <div class="filter-group">
+        <label for="maxPrice">Prix maximum :</label>
+        <input
+          type="number"
+          id="maxPrice"
+          [(ngModel)]="maxPrice"
+          (input)="onFilterChange()"
+          placeholder="Prix maximum"
+          class="price-input"
+        >
+      </div>
+
+      <div class="filter-group">
+        <label for="location">Localisation :</label>
+        <input
+          type="text"
+          id="location"
+          [(ngModel)]="location"
+          (input)="onFilterChange()"
+          placeholder="Localisation"
+          class="location-input"
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="no-encheres-message" *ngIf="filteredEncheres.length === 0">
+    <p>Aucune enchère disponible.</p>
+  </div>
+
+  <div class="auction-list" *ngIf="filteredEncheres.length > 0">
+    <div *ngFor="let enchere of filteredEncheres" class="auction-card" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+      <div class="auction-image"><img [src]="enchere.image || 'assets/default-image.jpg'" alt="{{ enchere.nom }}"></div>
+      <div class="auction-details">
+        <h3 class="auction-title">{{ enchere.nom }}</h3>
+        <p class="auction-description">{{ enchere.description }}</p>
+        <p class="auction-price">Prix Actuel : {{ enchere.prixactuel | currency }}</p>
+        <p class="auction-location">{{ enchere.localisation }}</p>
+        <button class="bid-button" (click)="onSelectEnchere(enchere)">Parcourir</button>
+      </div>
+    </div>
+  </div>
+</div>

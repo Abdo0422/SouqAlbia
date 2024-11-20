@@ -1,0 +1,175 @@
+.right{
+  float: right;
+  width: 700px;
+
+}
+.right .titre h2{
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 204px;
+  height: 27px;
+  color: var(--white);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+.left{
+  float: left;
+  width: 50%;
+}
+.dropdown-button {
+  padding: 10px 20px;
+  background-color:transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px;
+  color:var(--black);
+  margin-left: -19px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+.left ul{
+  list-style-type: none;
+  margin-left: -37px;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px;
+  color:var(--black);
+}
+.left ul li:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.left ul li:active{
+  color: var(--secondary-color);
+}
+.left ul li{
+  margin-bottom: 10px;
+}
+.left .sub{
+  margin-left: 5px;
+  font-size: 14px;
+  margin-top: -10px;
+  display: none;
+  z-index: 1;
+  min-width: 160px;
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+.dropdown:hover .sub{
+  display: block;
+  cursor: pointer;
+}
+.sub li a:active{
+  cursor: pointer;
+  color: var(--primary-color)
+}
+
+.right .EncheresGraphs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.right .EncheresGraphs h3{
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin-left: 20px;
+  color: var(--white);
+  font-size: 20px;
+}
+.right .list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right .list .item{
+  text-align: center;
+  padding: 10px;
+  transition: 0.5s;
+  border-radius: 10px;
+  border:none;
+}
+.right .list .item:hover{
+  border: 1px solid var(--white);
+}
+.right .list .item img{
+  width: 100px;
+}
+.right .list .item h4{
+   font-family: "Imprima", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  color: var(--white);
+}
+.right .list .item p{
+   font-family: "Imprima", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: var(--white);
+}
+.right .button{
+  margin-top: 20px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 5px;
+  color: var(--primary-color);
+  border:1px solid var(--primary-color);
+  transition: 0.5s;
+  text-decoration: none;
+
+}
+.right .button:hover{
+  cursor: pointer;
+  color: var(--white);
+  border: none;
+  background-color: var(--primary-color);
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%
+  }
+
+  .left {
+    width: 50%
+  }
+
+  .right {
+    width: 50%
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+
+
+}

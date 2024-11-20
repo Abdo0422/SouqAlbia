@@ -1,0 +1,19 @@
+<div class="admin-wrapper">
+  <nav class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a routerLink="users" routerLinkActive="active">Manage Users</a></li>
+      <li><a routerLink="encheres" routerLinkActive="active">Manage Encheres</a></li>
+      <li><a routerLink="reports" routerLinkActive="active">Manage Reports</a></li>
+      <li><a routerLink="transactions" routerLinkActive="active">Manage Transactions</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <header class="header">
+      <h1>Admin Dashboard</h1>
+    </header>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>

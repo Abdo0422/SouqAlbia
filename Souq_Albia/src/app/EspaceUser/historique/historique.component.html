@@ -1,0 +1,30 @@
+<div class="right">
+  <div class="titre">
+    <h2>Historique des connexions</h2>
+  </div>
+  <p *ngIf="!enchereHistory || enchereHistory.length === 0" class="no-enchere-message">
+    Aucun historique de connexions disponible.
+  </p>
+
+  <div *ngIf="enchereHistory && enchereHistory.length > 0">
+    <button class="erase" (click)="clearHistory()">Tout effacer</button>
+
+    <div *ngFor="let enchere of enchereHistory" class="Produit">
+      <img [src]="enchere.image || 'default_image_url.png'" width="150px" height="100%">
+
+      <div class="textpro">
+        <h2>{{ enchere.nom }}</h2>
+        <p>{{ enchere.description | slice: 0:100 }}...</p>
+
+        <span>
+          <p>Se termine en {{ getRemainingTime(enchere.dateFin) }}</p>
+          <img src="https://www.kindpng.com/picc/m/156-1564712_transparent-red-triangle-png-png-download.png" alt="Bid Indicator" width="20px" height="20px">
+        </span>
+
+        <div>
+          <a (click)="onSelectEnchere(enchere)">Parcourir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

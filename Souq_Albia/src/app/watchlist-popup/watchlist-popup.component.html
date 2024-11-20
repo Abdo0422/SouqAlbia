@@ -1,0 +1,10 @@
+<div id="watchlist-popup" class="popup">
+  <h2>Votre Liste de Souhaits</h2>
+  <ul>
+    <li *ngFor="let enchere of watchlist">
+      {{ enchere.nom }} - {{ enchere.prixactuel }}
+      <button class="visit-button" (click)="onSelectEnchere(enchere)">Visiter</button>
+    </li>
+  </ul>
+  <button class="close-button" (click)="closePopup()">Fermer</button>
+</div>

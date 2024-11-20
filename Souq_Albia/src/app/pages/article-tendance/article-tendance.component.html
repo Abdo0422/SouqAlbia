@@ -1,0 +1,77 @@
+<div class="container">
+  <h1 class="title">Articles Tendance</h1>
+
+  <div class="category-container">
+    <div
+      *ngFor="let category of categories"
+      (click)="toggleSubCategories(category)"
+      [class.active]="selectedCategory === category"
+      class="category-card"
+    >
+      <h2>{{ category.nom }}</h2>
+    </div>
+  </div>
+
+  <div class="subcategory-container" *ngIf="showSubCategories">
+    <h3>Sous-catégories de {{ categoryName }}</h3>
+    <div
+      *ngFor="let subCategory of filteredSousCategories"
+      (click)="selectSubCategory(subCategory)"
+      [class.selected]="selectedSousCategorie === subCategory"
+      class="subcategory-card"
+    >
+      <p>{{ subCategory.nom }}</p>
+    </div>
+  </div>
+
+  <div class="trending-auctions">
+    <h3>Enchères Tendance</h3>
+    <div
+      *ngFor="let enchere of enchereDataTendance"
+      class="auction-card"
+      [ngClass]="{ inactive: enchere.status === 'inactive' }"
+    >
+      <img
+        [src]="enchere.image"
+        alt="{{ enchere.nom }}"
+        class="auction-image"
+      />
+      <div class="auction-details">
+        <h4>{{ enchere.nom }}</h4>
+        <p>{{ enchere.description }}</p>
+        <p>
+          <strong>Prix de départ :</strong> {{ enchere.prixdepart | currency }}
+        </p>
+        <p>
+          <strong>Prix actuel :</strong> {{ enchere.prixactuel | currency }}
+        </p>
+        <p><strong>Nombre d'enchères :</strong> {{ enchere.NumBids }}</p>
+        <button
+          (click)="onSelectEnchere(enchere)"
+          style="
+            margin-top: 10px;
+            width: 167px;
+            height: 23px;
+            transition: color ease 0.3s;
+            padding: 5px 10px;
+            background-color: var(--secondary-color);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            margin-right: 0px;
+            cursor: pointer;
+            position: absolute;
+            right: 20%;
+            margin-top: -20px;
+           :hover {
+             background-color: black;
+             color: var(--secondary-color);
+           }
+          "
+        >
+          Parcourir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

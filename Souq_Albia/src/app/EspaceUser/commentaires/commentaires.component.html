@@ -1,0 +1,31 @@
+<div class="right">
+  <div class="titre">
+    <h2>Commentaires</h2>
+  </div>
+  <div *ngFor="let comment of comments" class="product">
+  <div class="commentary" *ngIf="userId === comment.vendeurID; else noComments">
+    <h3>Reçu en tant que vendeur</h3>
+    <div class="list">
+        <img [src]="comment.enchereImage" width="150px">
+        <div class="text">
+          <h4>{{ comment.enchereNom }}</h4>
+          <div class="btns">
+            <ng-container *ngFor="let star of stars">
+              <span [ngClass]="{'filled': star <= comment.rating, 'empty': star > comment.rating}">
+                &#9733;
+              </span>
+            </ng-container>
+          </div>
+          <p>{{ comment.acheteurName }}, {{ comment.date }}</p>
+          <p>{{ comment.text }}</p>
+        </div>
+    </div>
+
+    <button class="submit">Voir Tous les commentaires</button>
+  </div>
+</div>
+   <ng-template #noComments>
+  <p class="no-comments">Aucun commentaire à afficher.</p>
+</ng-template>
+
+</div>

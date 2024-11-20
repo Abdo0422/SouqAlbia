@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="#">Souq Albia</a>
+    <span> > </span>
+    <a href="#">{{ categoryName }}</a>
+    <span> > </span>
+    <a href="#" class="current">{{ selectedSousCategorie?.nom }}</a>
+  </div>
+  <h2>{{ categoryName }}</h2>
+  <div class="list">
+    <div
+      *ngFor="let subCategory of subCategories"
+      class="souscategorie"
+      [class.active]="
+        subCategory.id_sous_categorie ===
+        selectedSousCategorie?.id_sous_categorie
+      "
+      (click)="selectSubCategory(subCategory)"
+    >
+      <h3>{{ subCategory.nom }}</h3>
+      <img [src]="subCategory.image" alt="{{ subCategory.nom }}" />
+    </div>
+  </div>
+
+
+
+  <div class="productmenu">
+    <p class="titlepro">Article à venir</p>
+    <div class="ligne"></div>
+    <div class="both">
+      <div class="left">
+        <div class="headres">
+          <h4>{{ getSousCategoryItemCount() }} Résultats</h4>
+        </div>
+        <div class="ligne"></div>
+
+        <ul class="tout">
+          <li class="headsidebar">
+            Catégories
+            <ul class="categorie">
+              <li
+                *ngFor="let category of categories"
+                (click)="toggleSubCategories(category)"
+                class="li-click"
+              >
+                {{ category.nom }}
+                <ul
+                  class="souscategorie0"
+                  *ngIf="
+                    showSubCategories &&
+                    selectedCategory?.id_categorie === category.id_categorie
+                  "
+                >
+                  <li
+                    *ngFor="let sousCategorie of filteredSousCategories"
+                    (click)="selectSubCategory(sousCategorie)"
+                  >
+                    {{ sousCategorie.nom }}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="headsidebar">
+            Pays
+            <ul class="souscategorie1" *ngFor="let country of countries">
+              <li>
+                <input
+                  type="checkbox"
+                  [checked]="selectedCountries.has(country)"
+                  (change)="toggleCountrySelection(country)"
+                />
+                {{ country }}</li>
+            </ul>
+          </li>
+          <li class="headsidebar">État</li>
+          <li class="headsidebar">Date de clôture</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="topTrier">
+          <p>Trier par:</p>
+          <div class="dropdown">
+            <button class="dropbtn">Choisir</button>
+            <div class="dropdown-content">
+              <button (click)="sortProducts('tempsRestant')">Temps Restant</button>
+              <button (click)="sortProducts('recentementAjoute')">Récemment Ajouté</button>
+            </div>
+          </div>
+        </div>
+        <div class="list1">
+          <ng-container
+            *ngIf="selectedSousCategoryProducts().length > 0; else noProducts"
+          >
+            <div
+              class="Produit"
+              *ngFor="let product of selectedSousCategoryProducts()"
+              [ngClass]="{'inactive': product.status === 'inactive'}"
+            >
+              <a (click)="onSelectEnchere(product)"
+                ><img [src]="product.image" />
+                <h4 style="color: red;">{{ getRemainingTime(product) }}</h4>
+                <p class="desc">{{ product.nom }}</p>
+                <span>
+                  <p>{{ product.prixactuel }} DH</p>
+                  <em>({{ product.NumBids }} Offres)</em>
+                </span>
+              </a>
+            </div>
+          </ng-container>
+          <ng-template #noProducts>
+            <div class="no-products-sign">
+              <p>No products available</p>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

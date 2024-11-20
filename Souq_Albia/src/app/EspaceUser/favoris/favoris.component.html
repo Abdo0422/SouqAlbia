@@ -1,0 +1,38 @@
+<div class="right">
+  <div class="titre">
+    <h2>Favoris</h2>
+  </div>
+  <div class="dpn">
+    <p>Voir :</p>
+    <div class="dropdown">
+      <button class="dropdown-btn" (click)="toggleDropdown()">Choisir</button>
+      <div class="dropdown-content" [ngClass]="{'show': isDropdownOpen}">
+        <a (click)="sortWatchlist('oldest')">Le plus ancien</a>
+        <a (click)="sortWatchlist('newest')">Nouveauté</a>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="produit" *ngFor="let enchere of watchlist">
+      <img
+        [src]="enchere.image"
+        width="150px"
+        height="100%"
+      />
+      <div class="text">
+        <h3>{{ enchere.nom }}</h3>
+        <p>{{ enchere.description }}</p>
+        <span>
+          <p>{{ getRemainingTime(enchere.dateFin) }}</p>
+          <img
+            src="https://www.kindpng.com/picc/m/156-1564712_transparent-red-triangle-png-png-download.png"
+            alt="Transparent Red Triangle Png, Png Download@kindpng.com"
+            width="20px"
+            height="20px"
+          />
+        </span>
+        <button (click)="onSelectEnchere(enchere)">Parcourir</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="section">
+  <h2>Manage Encheres</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Vendeur</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enchere of encheres">
+        <td>{{ enchere.id }}</td>
+        <td>{{ enchere.nom }}</td>
+        <td>{{ enchere.description }}</td>
+        <td>{{ enchere.prixactuel }} DH</td>
+        <td>{{ enchere.vendeur_nom }}</td>
+        <td>{{ enchere.status }}</td>
+        <td>
+          <button (click)="deleteEnchere(enchere.id)" class="btn btn-danger">Delete</button>
+          <button *ngIf="enchere.status === 'inactive'" (click)="startEnchere(enchere.id)" class="btn btn-success">Start</button>
+          <button *ngIf="enchere.status === 'active'" (click)="stopEnchere(enchere.id)" class="btn btn-warning">Stop</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

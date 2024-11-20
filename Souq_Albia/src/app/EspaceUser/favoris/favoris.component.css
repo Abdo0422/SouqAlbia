@@ -1,0 +1,138 @@
+
+.right .titre h2 {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 15px 15px 15px;
+  width: 40%;
+  height: 27px;
+  color: var(--white);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+}
+.right .dpn {
+  display: flex;
+  float: right;
+}
+.right .dpn p {
+  margin-top: 5px;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  padding: 5px 30px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {background-color: var(--primary-color);}
+
+.show {
+  display: block;
+}
+.right .produit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.right .produit img {
+  margin-right: 40px;
+}
+.right .text {
+  display: block;
+
+}
+.right .text h3 {
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  width: 100%;
+}
+.right .text p {
+  width: 450px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .text span {
+  display: flex;
+}
+.right .text span p {
+  margin-top: 0;
+  color: var(--red);
+}
+.right .text span img {
+  transform: rotate(-90deg);
+  margin-left: -230px;
+}
+.right .list .produit button {
+  float: right;
+  width: 150px;
+  height: 30px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 22px;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.right .list .produit button:hover {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%;
+  }
+
+  .left {
+    width: 50%;
+  }
+
+  .right {
+    width: 50%;
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+}

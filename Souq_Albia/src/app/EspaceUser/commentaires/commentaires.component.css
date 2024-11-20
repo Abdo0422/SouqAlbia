@@ -1,0 +1,132 @@
+.right{
+  width: 70%;
+}
+.right .titre h2{
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 15px 15px 15px;
+  width: 100%;
+  height: 27px;
+  color: var(--white);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  text-align:center;
+}
+
+.right .commentary .list .product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+.right .commentary .list .product img{
+  margin-right: 20px;
+}
+.right .commentary .list .product .text h4{
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px
+}
+
+.right .commentary .list .product .text .btns button{
+  background-color: transparent;
+  font-size: 20px;
+  color: var(--grey);
+  border: none;
+}
+.right .commentary .list .product .text .btns button:hover{
+  color: var(--primary-color);
+}
+.right .commentary h3{
+  color: var(--primary-color);
+   font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:20px;
+  width: 500px;
+}
+
+.right .commentary .list .product .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%; /* Ensure it takes up the full width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.right .commentary .list .product .text p {
+  margin: 0; /* Remove default margin */
+  word-wrap: break-word; /* Ensure long words break and wrap */
+  overflow-wrap: break-word; /* Extra support for word breaking */
+  white-space: normal; /* Allow text to wrap onto the next line */
+  line-height: 1.5; /* Adjust line height for readability */
+  width: 600px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%
+  }
+
+  .left {
+    width: 50%
+  }
+
+  .right {
+    width: 50%
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+
+
+}
+.submit {
+  width: 280px;
+  height: 40px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.submit:hover {
+  border: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+.btns {
+  display: flex;
+}
+
+.filled {
+  color: var(--primary-color); /* Color for filled stars */
+}
+
+.empty {
+  color: lightgray; /* Color for empty stars */
+}
+
+.btns span {
+  font-size: 20px; /* Adjust size as needed */
+  margin-right: 2px; /* Space between stars */
+}
+.no-comments {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888; /* Light gray color for the text */
+  margin: 20px 0; /* Margin to give space around the message */
+  font-style: italic;
+  width: 100%;
+}

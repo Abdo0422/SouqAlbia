@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="#">Souq Albia</a>
+    <span> > </span>
+    <a href="#" class="current">Mon Espace</a>
+  </div>
+  <div class="Espace">
+    <h3>Mon Espace</h3>
+    <div class="ligne"></div>
+    <div class="both">
+      <div class="left">
+        <ul>
+          <li><a routerLink="Profile" routerLinkActive="active">Profil</a></li>
+          <li><a routerLink="Historique" routerLinkActive="active">Activités Récents</a></li>
+          <li class="dropdown">
+            <button class="dropdown-btn" (click)="toggleDropdown()">Achats et ventes</button>
+            <ul class="sub" [ngClass]="{ 'show': isDropdownOpen }">
+              <li><a routerLink="ObjetsGagnés" routerLinkActive="active">Historique des enchères remportées</a></li>
+              <li><a routerLink="MesEncheres" routerLinkActive="active">Articles en cours de vente</a></li>
+              <li><a routerLink="TableauDeBord" routerLinkActive="active">Boutique en ligne</a></li>
+            </ul>
+          </li>
+          <li class="droptop"><a routerLink="Commentaires" routerLinkActive="active">Évaluations et commentaires</a></li>
+          <li><a routerLink="Favoris" routerLinkActive="active">Gestion des favoris</a></li>
+          <li><a routerLink="Chatroom" routerLinkActive="active">Salle des discussions</a></li>
+        </ul>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

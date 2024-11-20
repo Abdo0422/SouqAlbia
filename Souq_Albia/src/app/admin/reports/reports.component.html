@@ -1,0 +1,39 @@
+<div class="reports-container">
+  <h2>Manage Reports</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Enchere ID</th>
+        <th>Reason</th>
+        <th>Date Submitted</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.enchere_id }}</td>
+        <td>{{ report.reason }}</td>
+        <td>{{ report.created_at }}</td>
+        <td>
+          <button (click)="handleReport(report)">View</button>
+          <button (click)="deleteReport(report.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal for showing enchere details -->
+  <div *ngIf="isDetailVisible" class="modal">
+    <div class="modal-content">
+      <span (click)="closeDetailModal()" class="close">&times;</span>
+      <h3>Enchere Details</h3>
+      <p><strong>Produit Name:</strong> {{ selectedReport?.enchereDetails?.produit_nom }}</p>
+      <p><strong>Description:</strong> {{ selectedReport?.enchereDetails?.produit_description }}</p>
+      <p><strong>Date Debut:</strong> {{ selectedReport?.enchereDetails?.dateDebut }}</p>
+      <p><strong>Date Fin:</strong> {{ selectedReport?.enchereDetails?.dateFin }}</p>
+      <p><strong>Prix Actuel:</strong> {{ selectedReport?.enchereDetails?.prixActuel }}</p>
+      <p><strong>Nombre de Bids:</strong> {{ selectedReport?.enchereDetails?.nombre_de_bids }}</p>
+      <!-- Add more fields as needed -->
+    </div>
+  </div>
+</div>

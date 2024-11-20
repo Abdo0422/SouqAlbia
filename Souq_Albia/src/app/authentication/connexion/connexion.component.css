@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
+
+:host{
+  --primary-color:#BC9C22;
+  --secondary-color:#D4AF22;
+  --white:#FFFFFF;
+  --grey:#D9D9D9;
+  --red:#F32C2C;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 2%;
+  padding: 1% 4%;
+}
+
+form {
+  width: 90%;
+  max-width: 600px;
+}
+
+.form-input {
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+.form-input label {
+  font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.form-input input {
+  width: 100%;
+  height: 3em;
+  border-radius: 15px;
+  margin-top: 2%;
+  font-size: 0.9em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container h2 {
+  font-size: 2.2em;
+  text-align: center;
+  font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.check1 {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+label em {
+  font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.check {
+  margin-right: 10px;
+  width: 25px;
+  height: 26px;
+  margin-top: 5px;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 57px;
+  font-size: 1.15rem;
+  border-radius: 15px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white);
+}
+.btn-container button:hover {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+form p {
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+form a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+    padding: 2% 4%;
+  }
+
+  .form-input input {
+    width: calc(100% - 40px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .btn-container {
+    margin-top: 10px;
+  }
+
+  button[type="submit"] {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Media Query for tablet size */
+@media screen and (max-width: 992px) {
+  .container h2 {
+    margin-right: 0; /* Remove right margin for h2 on tablet */
+    text-align: center; /* Center align h2 on tablet */
+  }
+}
+
+/* Media Query for phone size */
+@media screen and (max-width: 576px) {
+  .container h2 {
+    font-size: 1.8em; /* Decrease font size of h2 on phone */
+  }
+
+  .form-input label {
+    font-size: 18px; /* Decrease font size of labels on phone */
+  }
+
+  label em {
+    font-size: 20px; /* Decrease font size of em within labels on phone */
+    margin-top: 5px; /* Adjust margin top of em within labels on phone */
+  }
+}

@@ -1,0 +1,557 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inder&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inconsolata:wght@200..900&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Imprima&family=Inconsolata:wght@200..900&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+:host {
+  --primary-color: #bc9c22;
+  --secondary-color: #d4af22;
+  --white: #ffffff;
+  --grey: #d9d9d9;
+  --red: #f32c2c;
+  --darkgrey: #727272;
+  --black: #000000;
+  --blue: #2256bc;
+}
+
+
+.right .titre h2 {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 15px 15px 15px;
+  width: 250px;
+  height: 27px;
+  color: var(--white);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  text-align: center;
+}
+
+.right .dpn {
+  display: flex;
+  float: right;
+}
+.right .dpn p {
+  margin-top: 5px;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.dropdown-btn {
+  padding: 5px 30px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.dropdown-content a {
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: var(--black);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 15px;
+}
+
+.dropdown:hover .dropdown-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.right .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+.right .top p {
+  font-family: "Inder", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .top .dpn p {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.top p,
+.dpn p {
+  margin: 0;
+  line-height: 1.5;
+}
+.right .product {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  gap: 100px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+.right .product .left {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 16px;
+}
+.right .product .left span {
+  display: flex;
+  gap: 10px;
+  margin-bottom: -20px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.right .product .left span p:first-child {
+  color: var(--primary-color);
+}
+.right .product .right {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  line-height: 1.5;
+}
+.right .product .right button:first-child {
+  color: var(--white);
+  border-radius: 10px;
+  border: 2px solid var(--white);
+  background-image: url("/assets/danger.png");
+  background-size: 20px;
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color);
+  width: 220px;
+  height: 30px;
+}
+.right .product .right button {
+  color: var(--primary-color);
+  border: none;
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  background-color: transparent;
+}
+.right .product .right button {
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+button {
+  cursor: pointer;
+}
+.payment-popup,
+.comment-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-content,
+.comment-content {
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.payment-content form,
+.comment-content form {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+.payment-content h2,
+.comment-content h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.existing-addresses {
+  margin-bottom: 20px;
+}
+
+.existing-addresses p,
+.PayWith p,
+.DebitCard label {
+  margin-bottom: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 17px;
+}
+.DebitCard input {
+  height: 30px;
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  margin-top: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.DebitCard div div {
+  display: flex;
+  flex-direction: column;
+}
+.DebitCard div {
+  display: flex;
+  margin-right: 20px;
+}
+.PayWith label {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+/* Style for the purchase confirmation message */
+.purchase-confirmation {
+  font-size: 1.25em; /* Slightly larger font size for emphasis */
+  color: var(--primary-color); /* Bootstrap success green */
+  font-weight: 600; /* Semi-bold text */
+  margin-bottom: 15px; /* More space below the message */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Style for the transaction details container */
+.transaction-details {
+  background-color: #ffffff; /* White background for contrast */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 10px; /* More rounded corners for a modern look */
+  padding: 20px; /* Increased padding for a more spacious feel */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  margin-top: 10px; /* Space above the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+/* Hover effect for transaction details */
+.transaction-details:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Additional styling for text inside transaction details */
+.transaction-details p {
+  margin: 10px 0; /* Space between paragraphs */
+  color: #555; /* Dark gray for readability */
+  line-height: 1.6; /* Increased line height for better readability */
+}
+/* Style for the close button */
+.close {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  color: #dc3545; /* Bootstrap danger color for the close icon */
+  font-weight: bold; /* Bold font for visibility */
+  font-size: 1.5em; /* Adjust size for prominence */
+  margin-left: 10px; /* Space between text and close icon */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.close:hover {
+  color: #c82333; /* Darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .purchase-confirmation {
+      font-size: 1.1em; /* Adjust font size on smaller screens */
+  }
+
+  .transaction-details {
+      padding: 15px; /* Less padding on smaller screens */
+  }
+}
+
+.existing-addresses .span {
+  background-color: var(--grey);
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.existing-addresses .span p {
+  width: 150px;
+  color: var(--black);
+  font-weight: 400;
+}
+.existing-addresses button {
+  color: var(--primary-color);
+  border: none;
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  background-color: transparent;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.address-section button:first-child {
+  border: none;
+  color: var(--primary-color);
+  border-radius: 10px;
+  background-image: url("/assets/add.png");
+  background-size: 10px;
+  background-position: left 7px center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 220px;
+  height: 30px;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+}
+.PayWith,
+.DebitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.debit-card-details button,
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.payment-logo {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.payment-method-section {
+  margin-bottom: 20px;
+}
+
+.debit-card-details {
+  display: none;
+}
+
+.payment-popup.open {
+  display: block;
+}
+.btns button {
+  background-color: transparent;
+  font-size: 20px;
+  color: var(--grey);
+  border: none;
+}
+
+.btns button.active {
+  color: var(--primary-color);
+}
+.btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.comment-content form label {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 17px;
+}
+.comment-content form button[type="submit"] {
+  background-image: url("/assets/send.png");
+  background-size: 20px;
+  background-position: right 40px center;
+  background-repeat: no-repeat;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--white);
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%;
+  }
+
+  .left {
+    width: 50%;
+  }
+
+  .right {
+    width: 50%;
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+}
+/* General Chat Popup Styles */
+.chat-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.chat-content {
+  background-color: #ffffff; /* White background for chat box */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 100%;
+  max-height: 80vh; /* Max height to ensure it doesn't exceed viewport height */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Style */
+.chat-content h2 {
+  margin: 0;
+  padding: 16px;
+  background-color:  var(--primary-color);
+  color: #ffffff; /* White text color */
+  text-align: center;
+}
+
+/* Messages Container */
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #f8f9fa; /* Light grey background */
+  border-bottom: 1px solid #e9ecef; /* Border between messages and input */
+}
+
+.messages div {
+  margin-bottom: 12px;
+}
+
+.messages p {
+  margin: 0;
+}
+
+.messages .timestamp {
+  font-size: 0.75rem;
+  color: #6c757d; /* Gray color for timestamps */
+}
+
+/* Textarea Styles */
+.chat-popup textarea {
+  width: calc(100% - 32px); /* Full width minus padding */
+  margin: 8px 16px;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  resize: none;
+  height: 80px;
+}
+
+/* File Input Styles */
+.chat-popup input[type="file"] {
+  margin: 8px 16px;
+}
+
+/* Buttons Styles */
+.chat-popup button {
+  background-color: var(--primary-color);
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  margin: 8px 16px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.chat-popup button:hover {
+  background-color: var(--secondary-color);
+}
+
+.chat-popup button:active {
+  transform: scale(0.98);
+}
+
+/* Close Button Styles */
+.chat-popup button.close {
+  background-color: #dc3545;
+}
+
+.chat-popup button.close:hover {
+  background-color: #c82333;
+}
+.no-auctions-message {
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+}

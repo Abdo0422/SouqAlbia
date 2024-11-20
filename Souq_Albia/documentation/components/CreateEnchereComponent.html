@@ -1,0 +1,1835 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>souq-albia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">souq-albia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CreateEnchereComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/EspaceUser/create-enchere/create-enchere.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-create-enchere</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./create-enchere.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./create-enchere.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#countries" >countries</a>
+                            </li>
+                            <li>
+                                <a href="#duration" >duration</a>
+                            </li>
+                            <li>
+                                <a href="#enchere" >enchere</a>
+                            </li>
+                            <li>
+                                <a href="#files" >files</a>
+                            </li>
+                            <li>
+                                <a href="#filteredCountries" >filteredCountries</a>
+                            </li>
+                            <li>
+                                <a href="#location" >location</a>
+                            </li>
+                            <li>
+                                <a href="#sousCategories" >sousCategories</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filterCountries" >filterCountries</a>
+                            </li>
+                            <li>
+                                <a href="#getSousCategories" >getSousCategories</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileChange" >onFileChange</a>
+                            </li>
+                            <li>
+                                <a href="#onReset" >onReset</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#selectCountry" >selectCountry</a>
+                            </li>
+                            <li>
+                                <a href="#selectSubCategory" >selectSubCategory</a>
+                            </li>
+                            <li>
+                                <a href="#updateDateFin" >updateDateFin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient, authService: <a href="../injectables/AuthenticationService.html" target="_self">AuthenticationService</a>, alertService: <a href="../injectables/AlertServicesService.html" target="_self">AlertServicesService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertServicesService.html" target="_self" >AlertServicesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterCountries"></a>
+                    <span class="name">
+                        <span ><b>filterCountries</b></span>
+                        <a href="#filterCountries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterCountries()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSousCategories"></a>
+                    <span class="name">
+                        <span ><b>getSousCategories</b></span>
+                        <a href="#getSousCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSousCategories()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;SousCategorie[]&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFileChange"></a>
+                    <span class="name">
+                        <span ><b>onFileChange</b></span>
+                        <a href="#onFileChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFileChange(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onReset"></a>
+                    <span class="name">
+                        <span ><b>onReset</b></span>
+                        <a href="#onReset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onReset(form: NgForm)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                        <code>NgForm</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit(form: NgForm)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="104"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                        <code>NgForm</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCountry"></a>
+                    <span class="name">
+                        <span ><b>selectCountry</b></span>
+                        <a href="#selectCountry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectCountry(country: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>country</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectSubCategory"></a>
+                    <span class="name">
+                        <span ><b>selectSubCategory</b></span>
+                        <a href="#selectSubCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectSubCategory(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDateFin"></a>
+                    <span class="name">
+                        <span ><b>updateDateFin</b></span>
+                        <a href="#updateDateFin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateDateFin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countries"></a>
+                    <span class="name">
+                        <span ><b>countries</b></span>
+                        <a href="#countries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;France&#x27;, &#x27;Allemagne&#x27;, &#x27;États-Unis&#x27;, &#x27;Canada&#x27;, &#x27;Australie&#x27;, &#x27;Japon&#x27;, &#x27;Chine&#x27;,
+    &#x27;Maroc&#x27;, &#x27;Espagne&#x27;, &#x27;Italie&#x27;, &#x27;Brésil&#x27;, &#x27;Inde&#x27;, &#x27;Mexique&#x27;, &#x27;Royaume-Uni&#x27;,
+    &#x27;Argentine&#x27;, &#x27;Afrique du Sud&#x27;, &#x27;Russie&#x27;, &#x27;Portugal&#x27;, &#x27;Grèce&#x27;, &#x27;Turquie&#x27;,
+    &#x27;Corée du Sud&#x27;, &#x27;Nouvelle-Zélande&#x27;, &#x27;Indonésie&#x27;, &#x27;Thaïlande&#x27;, &#x27;Vietnam&#x27;,
+    &#x27;Malaisie&#x27;, &#x27;Philippines&#x27;, &#x27;Egypte&#x27;, &#x27;Arabie Saoudite&#x27;, &#x27;Émirats Arabes Unis&#x27;
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="duration"></a>
+                    <span class="name">
+                        <span ><b>duration</b></span>
+                        <a href="#duration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enchere"></a>
+                    <span class="name">
+                        <span ><b>enchere</b></span>
+                        <a href="#enchere"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Enchere.html" target="_self" >Enchere</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Enchere()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="files"></a>
+                    <span class="name">
+                        <span ><b>files</b></span>
+                        <a href="#files"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>File[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredCountries"></a>
+                    <span class="name">
+                        <span ><b>filteredCountries</b></span>
+                        <a href="#filteredCountries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="location"></a>
+                    <span class="name">
+                        <span ><b>location</b></span>
+                        <a href="#location"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sousCategories"></a>
+                    <span class="name">
+                        <span ><b>sousCategories</b></span>
+                        <a href="#sousCategories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SousCategorie[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/EspaceUser/create-enchere/create-enchere.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { Enchere } from &quot;../../../model/Enchere&quot;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { SousCategorie } from &quot;../../../model/SousCategorie&quot;;
+import { AuthenticationService } from &quot;../../services/authentication.service&quot;;
+import { AlertServicesService } from &quot;../../services/alert-services.service&quot;;
+
+@Component({
+  selector: &#x27;app-create-enchere&#x27;,
+  templateUrl: &#x27;./create-enchere.component.html&#x27;,
+  styleUrls: [&#x27;./create-enchere.component.css&#x27;]
+})
+export class CreateEnchereComponent {
+  enchere: Enchere &#x3D; new Enchere();
+  duration: string &#x3D; &#x27;&#x27;;
+  location: string &#x3D; &#x27;&#x27;;
+  countries: string[] &#x3D; [
+    &#x27;France&#x27;, &#x27;Allemagne&#x27;, &#x27;États-Unis&#x27;, &#x27;Canada&#x27;, &#x27;Australie&#x27;, &#x27;Japon&#x27;, &#x27;Chine&#x27;,
+    &#x27;Maroc&#x27;, &#x27;Espagne&#x27;, &#x27;Italie&#x27;, &#x27;Brésil&#x27;, &#x27;Inde&#x27;, &#x27;Mexique&#x27;, &#x27;Royaume-Uni&#x27;,
+    &#x27;Argentine&#x27;, &#x27;Afrique du Sud&#x27;, &#x27;Russie&#x27;, &#x27;Portugal&#x27;, &#x27;Grèce&#x27;, &#x27;Turquie&#x27;,
+    &#x27;Corée du Sud&#x27;, &#x27;Nouvelle-Zélande&#x27;, &#x27;Indonésie&#x27;, &#x27;Thaïlande&#x27;, &#x27;Vietnam&#x27;,
+    &#x27;Malaisie&#x27;, &#x27;Philippines&#x27;, &#x27;Egypte&#x27;, &#x27;Arabie Saoudite&#x27;, &#x27;Émirats Arabes Unis&#x27;
+  ];
+  filteredCountries: string[] &#x3D; [];
+  files: File[] &#x3D; []; // Add a property to hold files
+  sousCategories: SousCategorie[] &#x3D; [];
+
+
+  constructor(private http: HttpClient , private authService: AuthenticationService , private alertService: AlertServicesService) {}
+  ngOnInit() {
+    this.getSousCategories().subscribe(
+      (data: SousCategorie[]) &#x3D;&gt; {
+        this.sousCategories &#x3D; data;
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Erreur lors de la récupération des sous-catégories:&#x27;, error);
+      }
+    );
+  }
+  filterCountries() {
+    const query &#x3D; this.location.toLowerCase();
+    if (query) {
+      this.filteredCountries &#x3D; this.countries
+        .filter(country &#x3D;&gt; country.toLowerCase().includes(query))
+        .sort((a, b) &#x3D;&gt; a.localeCompare(b));
+    } else {
+      this.filteredCountries &#x3D; [];
+    }
+  }
+
+  getSousCategories(): Observable&lt;SousCategorie[]&gt; {
+    return this.http.get&lt;SousCategorie[]&gt;(&#x27;http://localhost/Souq_AlbiaBackend/getSousCategories.php&#x27;);
+  }
+  updateDateFin() {
+    const days &#x3D; 0;
+    let durationDays &#x3D; 0;
+
+    switch (this.duration) {
+      case &#x27;3 jours&#x27;:
+        durationDays &#x3D; 3;
+        break;
+      case &#x27;24h&#x27;:
+        durationDays &#x3D; 1;
+        break;
+      case &#x27;7 jours&#x27;:
+        durationDays &#x3D; 7;
+        break;
+    }
+    this.enchere.dateDebut &#x3D; new Date();
+    this.enchere.dateFin &#x3D; new Date();
+    this.enchere.dateFin.setDate(this.enchere.dateFin.getDate() + days);
+  }
+  selectSubCategory(event: Event) {
+    const target &#x3D; event.target as HTMLSelectElement;
+    const selectedValue &#x3D; target.value;
+
+    // Check if the selectedValue is not empty and is a valid number
+    if (selectedValue) {
+      const id &#x3D; Number(selectedValue); // Convert value to number
+      if (!isNaN(id)) {
+        this.enchere.id_sous_categorie &#x3D; id;
+      } else {
+        console.error(&#x27;Invalid number selected:&#x27;, selectedValue);
+        this.enchere.id_sous_categorie &#x3D; 0; // or handle as needed
+      }
+    } else {
+      this.enchere.id_sous_categorie &#x3D; 0; // or handle as needed
+    }
+  }
+
+  selectCountry(country: string) {
+    this.location &#x3D; country;
+    this.filteredCountries &#x3D; [];
+  }
+
+  onFileChange(event: Event) {
+    const input &#x3D; event.target as HTMLInputElement;
+    if (input.files) {
+      this.files &#x3D; Array.from(input.files); // Convert FileList to array
+    }
+  }
+  onSubmit(form: NgForm): void {
+    console.log(&#x27;Enchere object:&#x27;, this.enchere);
+
+    const formData &#x3D; new FormData();
+    formData.append(&#x27;title&#x27;, this.enchere.nom);
+    formData.append(&#x27;description&#x27;, this.enchere.description);
+    formData.append(&#x27;state&#x27;, this.enchere.state);
+    formData.append(&#x27;location&#x27;, this.location);
+    formData.append(&#x27;duration&#x27;, this.duration);
+    formData.append(&#x27;startingPrice&#x27;, this.enchere.prixdepart.toString());
+    formData.append(&#x27;id_sous_categorie&#x27;, this.enchere.id_sous_categorie.toString());
+
+    const vendeurId &#x3D; this.authService.getCurrentUserId();
+    if (vendeurId !&#x3D;&#x3D; null) {
+      formData.append(&#x27;vendeur_id&#x27;, vendeurId.toString());
+    } else {
+      console.error(&#x27;No current user found, cannot set vendeur_id.&#x27;);
+      return;
+    }
+
+    this.files.forEach(file &#x3D;&gt; formData.append(&#x27;images[]&#x27;, file));
+    console.log(&#x27;Contenu du FormData :&#x27;);
+    formData.forEach((value, key) &#x3D;&gt; {
+      console.log(key, value);
+    });
+
+    this.http.post(&#x27;http://localhost/Souq_AlbiaBackend/CreateEnchere.php&#x27;, formData).subscribe(
+      response &#x3D;&gt; {
+        console.log(&#x27;Response:&#x27;, response); // Log the response
+        this.alertService.addAlert(&quot;Enchère créée avec succès&quot;);
+        form.resetForm(); // Optionally reset the form on success
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Erreur lors de la création de l\&#x27;enchère:&#x27;, error);
+        if (error.error) {
+          console.error(&#x27;Erreur du serveur:&#x27;, error.error);
+        }
+        this.alertService.addAlert(&quot;Erreur lors de la création de l&#x27;enchère&quot;);
+      }
+    );
+  }
+
+
+
+
+  onReset(form: NgForm): void { // Updated method to accept form argument
+    form.resetForm();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;breadcrumbs&quot;&gt;
+    &lt;a href&#x3D;&quot;#&quot;&gt;Souq Albia&lt;/a&gt;
+    &lt;span&gt; &gt; &lt;/span&gt;
+    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;current&quot;&gt;Créez votre annonce d&#x27;enchères&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;Espace&quot;&gt;
+    &lt;h3&gt;Lancez votre enchère&lt;/h3&gt;
+    &lt;div class&#x3D;&quot;ligne&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;form #form&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;onSubmit(form)&quot; (reset)&#x3D;&quot;onReset(form)&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;title&quot;&gt;Titre :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;title&quot;
+        name&#x3D;&quot;title&quot;
+        required
+        [(ngModel)]&#x3D;&quot;enchere.nom&quot;
+        placeholder&#x3D;&quot;Œuvre d&#x27;art unique par [Nom de l&#x27;artiste] - [Titre de l&#x27;œuvre]&quot;
+      /&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;description&quot;&gt;Description :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;textarea
+        id&#x3D;&quot;description&quot;
+        name&#x3D;&quot;description&quot;
+        rows&#x3D;&quot;4&quot;
+        required
+        [(ngModel)]&#x3D;&quot;enchere.description&quot;
+        placeholder&#x3D;&quot;[La description détaillée du produit est essentielle pour informer les acheteurs potentiels sur les caractéristiques, la qualité et l&#x27;esthétique de l&#x27;œuvre. Elle devrait inclure des informations sur la taille, le poids, le matériau utilisé, l&#x27;état de l&#x27;objet, ainsi que des détails sur son style et son esthétique. Utilisez des mots évocateurs pour capturer l&#x27;essence de l&#x27;œuvre et mettre en valeur ses points forts. Une description bien rédigée peut aider à susciter l&#x27;intérêt des acheteurs et à créer une connexion émotionnelle avec l&#x27;œuvre, les incitant à envisager sérieusement leur achat.]&quot;
+      &gt;&lt;/textarea
+      &gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label&gt;État :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;div class&#x3D;&quot;etat&quot;&gt;
+        &lt;label
+          &gt;&lt;input
+            type&#x3D;&quot;radio&quot;
+            name&#x3D;&quot;condition&quot;
+            value&#x3D;&quot;excellent&quot;
+            required
+            [(ngModel)]&#x3D;&quot;enchere.state&quot;
+          /&gt;
+          Excellent &lt;/label
+        &gt;&lt;br /&gt;
+        &lt;label
+          &gt;&lt;input
+            type&#x3D;&quot;radio&quot;
+            name&#x3D;&quot;condition&quot;
+            value&#x3D;&quot;acceptable&quot;
+            [(ngModel)]&#x3D;&quot;enchere.state&quot;
+          /&gt;
+          Acceptable &lt;/label
+        &gt;&lt;br /&gt;
+        &lt;label
+          &gt;&lt;input
+            type&#x3D;&quot;radio&quot;
+            name&#x3D;&quot;condition&quot;
+            value&#x3D;&quot;bon&quot;
+            [(ngModel)]&#x3D;&quot;enchere.state&quot;
+          /&gt;
+          Bon &lt;/label
+        &gt;&lt;br /&gt;
+        &lt;label
+          &gt;&lt;input
+            type&#x3D;&quot;radio&quot;
+            name&#x3D;&quot;condition&quot;
+            value&#x3D;&quot;utilisés pour pièces&quot;
+            [(ngModel)]&#x3D;&quot;enchere.state&quot;
+          /&gt;
+          Utilisés pour pièces &lt;/label
+        &gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;location&quot;&gt;Localisation d&#x27;origine :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;location&quot;
+        name&#x3D;&quot;location&quot;
+        placeholder&#x3D;&quot;Pays d&#x27;origine&quot;
+        required
+        [(ngModel)]&#x3D;&quot;location&quot;
+        (input)&#x3D;&quot;filterCountries()&quot;
+      /&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;ul *ngIf&#x3D;&quot;filteredCountries.length &gt; 0&quot; class&#x3D;&quot;country-list&quot;&gt;
+        &lt;li
+          *ngFor&#x3D;&quot;let country of filteredCountries&quot;
+          (click)&#x3D;&quot;selectCountry(country)&quot;
+        &gt;
+          {{ country }}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;duration&quot;&gt;Durée de l&#x27;enchère :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;div class&#x3D;&quot;select-wrapper&quot;&gt;
+        &lt;select id&#x3D;&quot;duration&quot; name&#x3D;&quot;duration&quot; required [(ngModel)]&#x3D;&quot;duration&quot; (change)&#x3D;&quot;updateDateFin()&quot;&gt;
+          &lt;option value&#x3D;&quot;&quot;&gt;Choisir la durée&lt;/option&gt;
+          &lt;option value&#x3D;&quot;3 jours&quot;&gt;3 jours&lt;/option&gt;
+          &lt;option value&#x3D;&quot;24h&quot;&gt;24 heures&lt;/option&gt;
+          &lt;option value&#x3D;&quot;7 jours&quot;&gt;7 jours&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;subCategory&quot;&gt;Sous-catégorie :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;div class&#x3D;&quot;select-wrapper&quot;&gt;
+        &lt;select id&#x3D;&quot;subCategory&quot; name&#x3D;&quot;subCategory&quot; required (change)&#x3D;&quot;selectSubCategory($event)&quot;&gt;
+          &lt;option value&#x3D;&quot;&quot;&gt;Choisir une sous-catégorie&lt;/option&gt;
+          &lt;option *ngFor&#x3D;&quot;let subCat of sousCategories&quot; [value]&#x3D;&quot;subCat.id_sous_categorie&quot;&gt;{{ subCat.nom }}&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+
+
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;starting-price&quot;&gt;Prix de départ :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;div class&#x3D;&quot;input-group&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+          &lt;span class&#x3D;&quot;input-group-text&quot;&gt;$&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;input
+          type&#x3D;&quot;number&quot;
+          id&#x3D;&quot;starting-price&quot;
+          name&#x3D;&quot;starting-price&quot;
+          step&#x3D;&quot;0.01&quot;
+          min&#x3D;&quot;0&quot;
+          required
+          [(ngModel)]&#x3D;&quot;enchere.prixdepart&quot;
+          placeholder&#x3D;&quot;Entrez le prix de départ&quot;
+          class&#x3D;&quot;form-control&quot;
+        /&gt;
+      &lt;/div&gt;
+      &lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;label for&#x3D;&quot;images&quot;&gt;Images :&lt;/label&gt;&lt;br /&gt;&lt;br /&gt;
+      &lt;input
+        type&#x3D;&quot;file&quot;
+        id&#x3D;&quot;images&quot;
+        name&#x3D;&quot;images&quot;
+        accept&#x3D;&quot;image/*&quot;
+        multiple
+        (change)&#x3D;&quot;onFileChange($event)&quot;
+      /&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/div&gt;
+
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;button type&#x3D;&quot;submit&quot;&gt;Créer l&#x27;enchère&lt;/button&gt;
+    &lt;br /&gt;&lt;br /&gt;
+    &lt;button type&#x3D;&quot;reset&quot;&gt;Réinitialiser le formulaire&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./create-enchere.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Inder&amp;family&#x3D;Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Inder&amp;family&#x3D;Inika:wght@400;700&amp;family&#x3D;Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Inconsolata:wght@200..900&amp;family&#x3D;Inder&amp;family&#x3D;Inika:wght@400;700&amp;family&#x3D;Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&amp;family&#x3D;IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family&#x3D;Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&amp;family&#x3D;Imprima&amp;family&#x3D;Inconsolata:wght@200..900&amp;family&#x3D;Inder&amp;family&#x3D;Inika:wght@400;700&amp;family&#x3D;Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;family&#x3D;Inter:wght@100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;Inconsolata:wght@200..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;family&#x3D;Jost:ital,wght@0,100..900;1,100..900&amp;display&#x3D;swap&quot;);
+@import url(&quot;https://fonts.googleapis.com/css2?family&#x3D;Gowun+Batang&amp;display&#x3D;swap&quot;);
+
+
+:host {
+  --primary-color: #bc9c22;
+  --secondary-color: #d4af22;
+  --white: #ffffff;
+  --grey: #d9d9d9;
+  --red: #f32c2c;
+  --darkgrey: #727272;
+  --black: #000000;
+  --blue: #2256bc;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  margin-top: 2%;
+  padding: 1% 4%;
+}
+.container h2 {
+  font-size: 24px;
+  text-align: left;
+  font-family: &quot;IBM Plex Sans Devanagari&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 300px;
+}
+.breadcrumbs {
+  font-size: 16px;
+  margin-top: -25px;
+  text-align: center;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #999;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.breadcrumbs .current {
+  color: black;
+  font-weight: 600;
+}
+
+.breadcrumbs span {
+  color: #333;
+  margin: 0 5px;
+}
+.ligne {
+  border: 1px solid var(--primary-color);
+  margin-top: -15px;
+}
+.Espace {
+  margin: 60px;
+  margin-top: 0;
+}
+.Espace h3 {
+  font-optical-sizing: auto;
+  font-family: &quot;Gowun Batang&quot;, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: var(--primary-color);
+}
+form {
+  margin: 80px;
+  margin-top: 0;
+}
+.form-group label:first-child {
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 17px;
+}
+.etat label:first-child,
+.etat label {
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+.form-group input[type&#x3D;&quot;text&quot;],
+input[type&#x3D;&quot;number&quot;] {
+  width: 380px;
+  height: 25px;
+  background-color: #f5f5f5f5;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.form-group textarea {
+  width: 380px;
+  height: 240px;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: #f5f5f5f5;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.etat label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.etat label input {
+  margin-right: 10px;
+}
+
+.etat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  width: 17%;
+  background-color: #f5f5f5f5;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.select-wrapper::after {
+  content: &quot;\25B2 \25BC&quot;;
+  position: absolute;
+  top: 50%;
+  left: 200px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--primary-color);
+}
+
+input[type&#x3D;&quot;file&quot;] {
+  width: 380px;
+  height: 25px;
+  background-color: #f5f5f5f5;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  cursor: pointer;
+}
+button[type&#x3D;&quot;submit&quot;] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  cursor: pointer;
+  width: 300px;
+  transition: 0.4s ease-in-out;
+}
+button[type&#x3D;&quot;reset&quot;] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  font-family: &quot;Ibarra Real Nova&quot;, serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  cursor: pointer;
+  width: 300px;
+  transition: 0.4s ease-in-out;
+}
+button[type&#x3D;&quot;submit&quot;]:hover {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white);
+}
+button[type&#x3D;&quot;reset&quot;]:hover {
+  background-color: var(--red);
+  border: none;
+  color: var(--white);
+}
+.country-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group .input-group-text {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+input[type&#x3D;&quot;number&quot;] {
+  padding-left: 22px;
+  padding-top: 5px;
+  width: 360px;
+  height: 20px;
+}
+.country-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.country-list li:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top input {
+    margin-bottom: 10px;
+  }
+
+  .signin,
+  .signup,
+  .aide {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .bottom ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container h2 {
+    margin-right: 0;
+  }
+
+  .form-group input[type&#x3D;&quot;text&quot;],
+  .form-group input[type&#x3D;&quot;number&quot;],
+  .form-group textarea,
+  .form-group select,
+  .form-group input[type&#x3D;&quot;file&quot;] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button[type&#x3D;&quot;submit&quot;],
+  button[type&#x3D;&quot;reset&quot;] {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="breadcrumbs">    <a href="#">Souq Albia</a>    <span> > </span>    <a href="#" class="current">Créez votre annonce d\'enchères</a>  </div>  <div class="Espace">    <h3>Lancez votre enchère</h3>    <div class="ligne"></div>  </div>  <form #form="ngForm" (ngSubmit)="onSubmit(form)" (reset)="onReset(form)">    <div class="form-group">      <label for="title">Titre :</label><br /><br />      <input        type="text"        id="title"        name="title"        required        [(ngModel)]="enchere.nom"        placeholder="Œuvre d\'art unique par [Nom de l\'artiste] - [Titre de l\'œuvre]"      /><br /><br />    </div>    <div class="form-group">      <label for="description">Description :</label><br /><br />      <textarea        id="description"        name="description"        rows="4"        required        [(ngModel)]="enchere.description"        placeholder="[La description détaillée du produit est essentielle pour informer les acheteurs potentiels sur les caractéristiques, la qualité et l\'esthétique de l\'œuvre. Elle devrait inclure des informations sur la taille, le poids, le matériau utilisé, l\'état de l\'objet, ainsi que des détails sur son style et son esthétique. Utilisez des mots évocateurs pour capturer l\'essence de l\'œuvre et mettre en valeur ses points forts. Une description bien rédigée peut aider à susciter l\'intérêt des acheteurs et à créer une connexion émotionnelle avec l\'œuvre, les incitant à envisager sérieusement leur achat.]"      ></textarea      ><br /><br />    </div>    <div class="form-group">      <label>État :</label><br /><br />      <div class="etat">        <label          ><input            type="radio"            name="condition"            value="excellent"            required            [(ngModel)]="enchere.state"          />          Excellent </label        ><br />        <label          ><input            type="radio"            name="condition"            value="acceptable"            [(ngModel)]="enchere.state"          />          Acceptable </label        ><br />        <label          ><input            type="radio"            name="condition"            value="bon"            [(ngModel)]="enchere.state"          />          Bon </label        ><br />        <label          ><input            type="radio"            name="condition"            value="utilisés pour pièces"            [(ngModel)]="enchere.state"          />          Utilisés pour pièces </label        ><br /><br />      </div>    </div>    <div class="form-group">      <label for="location">Localisation d\'origine :</label><br /><br />      <input        type="text"        id="location"        name="location"        placeholder="Pays d\'origine"        required        [(ngModel)]="location"        (input)="filterCountries()"      /><br /><br />      <ul *ngIf="filteredCountries.length > 0" class="country-list">        <li          *ngFor="let country of filteredCountries"          (click)="selectCountry(country)"        >          {{ country }}        </li>      </ul>    </div>    <div class="form-group">      <label for="duration">Durée de l\'enchère :</label><br /><br />      <div class="select-wrapper">        <select id="duration" name="duration" required [(ngModel)]="duration" (change)="updateDateFin()">          <option value="">Choisir la durée</option>          <option value="3 jours">3 jours</option>          <option value="24h">24 heures</option>          <option value="7 jours">7 jours</option>        </select>      </div>      <br /><br />    </div>    <div class="form-group">      <label for="subCategory">Sous-catégorie :</label><br /><br />      <div class="select-wrapper">        <select id="subCategory" name="subCategory" required (change)="selectSubCategory($event)">          <option value="">Choisir une sous-catégorie</option>          <option *ngFor="let subCat of sousCategories" [value]="subCat.id_sous_categorie">{{ subCat.nom }}</option>        </select>      </div>      <br /><br />    </div>    <div class="form-group">      <label for="starting-price">Prix de départ :</label><br /><br />      <div class="input-group">        <div class="input-group-prepend">          <span class="input-group-text">$</span>        </div>        <input          type="number"          id="starting-price"          name="starting-price"          step="0.01"          min="0"          required          [(ngModel)]="enchere.prixdepart"          placeholder="Entrez le prix de départ"          class="form-control"        />      </div>      <br /><br />    </div>    <div class="form-group">      <label for="images">Images :</label><br /><br />      <input        type="file"        id="images"        name="images"        accept="image/*"        multiple        (change)="onFileChange($event)"      /><br /><br />    </div>    <br /><br />    <button type="submit">Créer l\'enchère</button>    <br /><br />    <button type="reset">Réinitialiser le formulaire</button>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AideComponent', 'selector': 'app-aide'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleTendanceComponent', 'selector': 'app-article-tendance'},{'name': 'CatgoriePageComponent', 'selector': 'app-catgorie-page'},{'name': 'ChatroomComponent', 'selector': 'app-chatroom'},{'name': 'CommentairesComponent', 'selector': 'app-commentaires'},{'name': 'ConnexionComponent', 'selector': 'app-connexion'},{'name': 'CreateEnchereComponent', 'selector': 'app-create-enchere'},{'name': 'DerniereEnchereComponent', 'selector': 'app-derniere-enchere'},{'name': 'EncherePageComponent', 'selector': 'app-enchere-page'},{'name': 'FavorisComponent', 'selector': 'app-favoris'},{'name': 'HistoriqueComponent', 'selector': 'app-historique'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InscriptionComponent', 'selector': 'app-inscription'},{'name': 'ManageEncheresComponent', 'selector': 'app-manage-encheres'},{'name': 'ManageUsersComponent', 'selector': 'app-manage-users'},{'name': 'MesEncheresComponent', 'selector': 'app-mes-encheres'},{'name': 'ObjetsGagnesComponent', 'selector': 'app-objets-gagnes'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SousCategoriePageComponent', 'selector': 'app-sous-categorie-page'},{'name': 'TableauDeBordComponent', 'selector': 'app-tableau-de-bord'},{'name': 'UserSpaceComponent', 'selector': 'app-user-space'},{'name': 'WatchlistPopupComponent', 'selector': 'app-watchlist-popup'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CreateEnchereComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateEnchereComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="#">Souq Albia</a>
+    <span> > </span>
+    <a href="#" class="current">Créez votre annonce d'enchères</a>
+  </div>
+  <div class="Espace">
+    <h3>Lancez votre enchère</h3>
+    <div class="ligne"></div>
+  </div>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" (reset)="onReset(form)">
+    <div class="form-group">
+      <label for="title">Titre :</label><br /><br />
+      <input
+        type="text"
+        id="title"
+        name="title"
+        required
+        [(ngModel)]="enchere.nom"
+        placeholder="Œuvre d'art unique par [Nom de l'artiste] - [Titre de l'œuvre]"
+      /><br /><br />
+    </div>
+    <div class="form-group">
+      <label for="description">Description :</label><br /><br />
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        required
+        [(ngModel)]="enchere.description"
+        placeholder="[La description détaillée du produit est essentielle pour informer les acheteurs potentiels sur les caractéristiques, la qualité et l'esthétique de l'œuvre. Elle devrait inclure des informations sur la taille, le poids, le matériau utilisé, l'état de l'objet, ainsi que des détails sur son style et son esthétique. Utilisez des mots évocateurs pour capturer l'essence de l'œuvre et mettre en valeur ses points forts. Une description bien rédigée peut aider à susciter l'intérêt des acheteurs et à créer une connexion émotionnelle avec l'œuvre, les incitant à envisager sérieusement leur achat.]"
+      ></textarea
+      ><br /><br />
+    </div>
+    <div class="form-group">
+      <label>État :</label><br /><br />
+      <div class="etat">
+        <label
+          ><input
+            type="radio"
+            name="condition"
+            value="excellent"
+            required
+            [(ngModel)]="enchere.state"
+          />
+          Excellent </label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="condition"
+            value="acceptable"
+            [(ngModel)]="enchere.state"
+          />
+          Acceptable </label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="condition"
+            value="bon"
+            [(ngModel)]="enchere.state"
+          />
+          Bon </label
+        ><br />
+        <label
+          ><input
+            type="radio"
+            name="condition"
+            value="utilisés pour pièces"
+            [(ngModel)]="enchere.state"
+          />
+          Utilisés pour pièces </label
+        ><br /><br />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="location">Localisation d'origine :</label><br /><br />
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Pays d'origine"
+        required
+        [(ngModel)]="location"
+        (input)="filterCountries()"
+      /><br /><br />
+      <ul *ngIf="filteredCountries.length > 0" class="country-list">
+        <li
+          *ngFor="let country of filteredCountries"
+          (click)="selectCountry(country)"
+        >
+          {{ country }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <label for="duration">Durée de l'enchère :</label><br /><br />
+      <div class="select-wrapper">
+        <select id="duration" name="duration" required [(ngModel)]="duration" (change)="updateDateFin()">
+          <option value="">Choisir la durée</option>
+          <option value="3 jours">3 jours</option>
+          <option value="24h">24 heures</option>
+          <option value="7 jours">7 jours</option>
+        </select>
+      </div>
+      <br /><br />
+    </div>
+
+    <div class="form-group">
+      <label for="subCategory">Sous-catégorie :</label><br /><br />
+      <div class="select-wrapper">
+        <select id="subCategory" name="subCategory" required (change)="selectSubCategory($event)">
+          <option value="">Choisir une sous-catégorie</option>
+          <option *ngFor="let subCat of sousCategories" [value]="subCat.id_sous_categorie">{{ subCat.nom }}</option>
+        </select>
+      </div>
+      <br /><br />
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="starting-price">Prix de départ :</label><br /><br />
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input
+          type="number"
+          id="starting-price"
+          name="starting-price"
+          step="0.01"
+          min="0"
+          required
+          [(ngModel)]="enchere.prixdepart"
+          placeholder="Entrez le prix de départ"
+          class="form-control"
+        />
+      </div>
+      <br /><br />
+    </div>
+
+    <div class="form-group">
+      <label for="images">Images :</label><br /><br />
+      <input
+        type="file"
+        id="images"
+        name="images"
+        accept="image/*"
+        multiple
+        (change)="onFileChange($event)"
+      /><br /><br />
+    </div>
+
+    <br /><br />
+    <button type="submit">Créer l'enchère</button>
+    <br /><br />
+    <button type="reset">Réinitialiser le formulaire</button>
+  </form>
+</div>

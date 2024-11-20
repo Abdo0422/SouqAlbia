@@ -1,0 +1,211 @@
+.right{
+  float: right;
+  width: 700px;
+}
+.right .titre h2{
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 154px;
+  height: 27px;
+  color: var(--white);
+    font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.right .dpn{
+  display: flex;
+  float: right;
+}
+.right .dpn p{
+  margin-top: 5px;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  padding: 5px 30px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {background-color: var(--primary-color);}
+
+.show {
+  display: block;
+}
+.right  .Produit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100px;
+}
+.right .Produit img{
+  margin-right: 40px;
+}
+.right  .textpro{
+  display: block;
+}
+.right  .textpro h2{
+    font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  width:180px;
+}
+.right .textpro p{
+  width:450px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .textpro span{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.right .textpro .date{
+  min-width: 100%;
+}
+.right .textpro .date img{
+  float: right;
+  margin-top: 7px;
+}
+.right .Produit .btns{
+  margin-left: -150px
+}
+#offre p{
+  color:var(--primary-color);
+}
+#offre em{
+  margin-left: -280px;
+    font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .textpro span p{
+  margin-top: 0;
+  color: var(--red);
+}
+.right  .textpro span img{
+ transform: rotate(-90deg);
+   margin-left: -230px;
+}
+.right .Produit .btns a{
+  cursor: pointer;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px;
+  margin: 10px;
+  transition: 0.5s;
+
+}
+.right .Produit .btns .supp{
+  color: var(--red);
+  background-color: var(--white);
+  border: 1px solid var(--red);
+
+}
+.right .Produit .btns .mod{
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  margin-right: 18px;
+}
+.right .Produit a{
+  border:1px solid var(--primary-color);
+  border-radius: 15px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  float: right;
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+.right .Produit a:hover{
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border:none;
+}
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%
+  }
+
+  .left {
+    width: 50%
+  }
+
+  .right {
+    width: 50%
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+
+  .right .dpn {
+    flex-direction: column;
+    align-items: center;
+  }
+  .right .Produit {
+    max-width: 300px;
+  }
+
+  .right .textpro h2 {
+    max-width: 20%;
+    text-align: center;
+  }
+
+  .right .textpro p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .right .Produit .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}

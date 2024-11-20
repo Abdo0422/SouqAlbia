@@ -1,0 +1,128 @@
+<div class="container">
+  <h2>Créer un Compte</h2>
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-input">
+      <label>Nom Complet</label><br />
+      <input
+        type="text"
+        [(ngModel)]="user.nom"
+        name="username"
+        #username="ngModel"
+        required
+        placeholder="Entrez votre nom complet"
+      /><br />
+      <div *ngIf="username.invalid && username.touched">
+        <div
+          *ngIf="username.errors?.['required']"
+          style="position: absolute; color: red"
+        >
+          Le nom complet est requis.
+        </div>
+      </div>
+    </div>
+    <div class="form-input">
+      <label>Numéro de Téléphone</label><br />
+      <div style="display: flex">
+        <input
+          type="text"
+          [(ngModel)]="user.telephone"
+          name="phone"
+          #phone="ngModel"
+          required
+          pattern="[0-9]{10,15}"
+          placeholder="Entrez votre numéro de téléphone"
+        />
+      </div>
+      <div *ngIf="phone.invalid && phone.touched">
+        <div *ngIf="phone.errors?.['required']" style="color: red">
+          Le numéro de téléphone est requis.
+        </div>
+        <div *ngIf="phone.errors?.['pattern']" style="color: red">
+          Le numéro de téléphone doit être entre 10 et 15 chiffres.
+        </div>
+      </div>
+    </div>
+    <div class="form-input">
+      <label>Email</label><br />
+      <input
+        type="email"
+        [(ngModel)]="user.email"
+        name="email"
+        #email="ngModel"
+        required
+        placeholder="Entrez votre adresse email"
+      /><br />
+      <div *ngIf="email.invalid && email.touched">
+        <div *ngIf="email.errors?.['required']" style="color: red">
+          L'email est requis.
+        </div>
+        <div *ngIf="email.errors?.['email']" style="color: red">
+          Format d'email invalide.
+        </div>
+      </div>
+      <div *ngIf="emailExists" style="color: red">Email déjà utilisé.</div>
+    </div>
+    <div class="form-input">
+      <label>Mot de passe</label><br />
+      <input
+        type="password"
+        [(ngModel)]="user.password"
+        name="password"
+        #password="ngModel"
+        required
+        minlength="6"
+        placeholder="Entrez votre mot de passe"
+      /><br />
+      <div *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.errors?.['required']" style="color: red">
+          Le mot de passe est requis.
+        </div>
+        <div *ngIf="password.errors?.['minlength']" style="color: red">
+          Le mot de passe doit avoir au moins 6 caractères.
+        </div>
+      </div>
+    </div>
+    <div class="form-input">
+      <label>Confirmer le Mot de passe</label><br />
+      <input
+        type="password"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        required
+        placeholder="Confirmez votre mot de passe"
+      /><br />
+    </div>
+
+    <div class="check1">
+      <input
+        type="checkbox"
+        class="check"
+        name="acceptTerms"
+        [(ngModel)]="acceptTerms"
+        #acceptTermsModel="ngModel"
+        required
+      />
+      <label>
+        <em>J'accepte
+          <a href="/terms-and-conditions" target="_blank">les termes et conditions</a>
+        </em>
+      </label><br />
+
+      <div *ngIf="acceptTermsModel.invalid && acceptTermsModel.touched" style="color: red;">
+        <div *ngIf="acceptTermsModel.errors?.['required']">
+          Vous devez accepter les termes et conditions.
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="btn-container">
+      <button type="submit" [disabled]="registrationForm.invalid">
+        S'inscrire
+      </button>
+    </div>
+    <br />
+    <p>Vous avez déjà un compte? <a href="/Connexion">Connectez-vous</a></p>
+  </form>
+</div>

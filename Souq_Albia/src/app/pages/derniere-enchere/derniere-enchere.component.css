@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+:root {
+  --primary-color: #BC9C22;
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'IBM Plex Sans Condensed', sans-serif;
+  --font-tertiary: 'Ibarra Real Nova', serif;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+  font-family: var(--font-tertiary);
+}
+
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: var(--font-secondary);
+}
+
+.filter-select,
+.price-input,
+.location-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.filter-select:focus,
+.price-input:focus,
+.location-input:focus,
+.search-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.auction-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.auction-card {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.auction-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-color);
+}
+.inactive {
+  opacity: 0.5; /* Makes the inactive enchères appear faded */
+  pointer-events: none; /* Optional: Disables interaction with inactive items */
+}
+.auction-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auction-image img{
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.auction-details {
+  padding: 15px;
+}
+
+.auction-title {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+  font-family: var(--font-tertiary);
+}
+
+.auction-description {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: #666;
+}
+
+.auction-price {
+  font-size: 1.2rem;
+  margin: 0 0 10px;
+  color: var(--primary-color);
+}
+
+.auction-location {
+  font-size: 0.9rem;
+  margin: 0 0 15px;
+  color: #666;
+}
+
+.bid-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-secondary);
+}
+
+.bid-button:hover {
+  background-color: #a6891a;
+}
+.no-encheres-message {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 1.2rem;
+  color: #666;
+  font-family: var(--font-secondary);
+}

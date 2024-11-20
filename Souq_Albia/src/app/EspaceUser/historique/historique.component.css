@@ -1,0 +1,166 @@
+.right .titre h2 {
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 12px 15px;
+  width: fit-content;
+  color: var(--white);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  float: left;
+  padding: 10px;
+}
+
+.dropdown-btn {
+  padding: 12px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--black);
+  margin: -20px 0;
+  transition: color 0.3s;
+}
+
+.dropdown-btn:hover {
+  color: var(--primary-color);
+}
+
+.left ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.left ul li:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.left ul li:active {
+  color: var(--secondary-color);
+}
+
+.left .sub {
+  margin-left: 10px;
+  font-size: 14px;
+  display: none;
+  z-index: 1;
+  min-width: 160px;
+  padding: 5px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown:hover .sub {
+  display: block;
+  cursor: pointer;
+}
+
+.sub li a:active {
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.right div .Produit {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+.right div .Produit img {
+  margin-right: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right div .textpro {
+  display: block;
+}
+
+.right div .textpro h2 {
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.right div .textpro p {
+  width: 450px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.right div .textpro span {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right div .textpro span p {
+  margin-top: 0;
+  color: var(--red);
+}
+
+.right div .textpro span img {
+  transform: rotate(-90deg);
+  margin-left: -230px;
+}
+
+.right div .erase {
+  border: none;
+  background-color: transparent;
+  float: right;
+  color: var(--primary-color);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: all 0.3s;
+  width: 150px;
+}
+
+.right div .erase:hover {
+  cursor: pointer;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.right div .Produit a {
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  padding: 8px 40px;
+  float: right;
+  color: var(--primary-color);
+  transition: all 0.3s;
+}
+
+.right div .Produit a:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+.no-enchere-message {
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 20px;
+}

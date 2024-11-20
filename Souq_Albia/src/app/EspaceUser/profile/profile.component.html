@@ -1,0 +1,66 @@
+
+<div class="right">
+  <div class="titre">
+    <h2>Paramètre de Compte</h2>
+  </div>
+  <button class="supp" (click)="deleteUser()">
+    <img width="20px" height="20px" src="data:image/png;base64,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" />Supprimer
+  </button>
+  <form (ngSubmit)="updateProfile()">
+    <label>Nom Complet</label><br />
+    <input type="text" [(ngModel)]="user.nom" name="nom" /><br />
+    <label>Numéro de téléphone</label><br />
+    <input type="tel" [(ngModel)]="user.telephone" name="telephone" /><br />
+    <label>Email</label><br />
+    <input type="text" [(ngModel)]="user.email" name="email" /><br />
+    <label>Mot de passe</label><br />
+    <input type="password" [(ngModel)]="user.password" name="password" />
+
+
+    <div class="buttons">
+      <div>
+        <button type="button" (click)="showShippingInput = !showShippingInput">
+          <img width="15px" src="assets/add.png"
+          />
+          Ajouter une Adresse d'expédition
+        </button>
+        <div *ngIf="showShippingInput">
+          <div>
+            <input type="text" placeholder="Nom de l'option" #shippingInput />
+            <button type="button" (click)="addAddress('shipping', shippingInput.value)">Ajouter</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" (click)="showDeliveryInput = !showDeliveryInput">
+          <img width="15px" src="assets/add.png"
+          />
+          Ajouter une Adresse de livraison
+        </button>
+        <div *ngIf="showDeliveryInput">
+          <div>
+            <input type="text" placeholder="Nom de l'option" #deliveryInput />
+            <button type="button" (click)="addAddress('delivery', deliveryInput.value)">Ajouter</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" (click)="showPaymentInput = !showPaymentInput">
+          <img width="15px" src="assets/add.png"
+          />
+          Ajouter une Option de paiement
+        </button>
+        <div *ngIf="showPaymentInput">
+          <div>
+            <input type="text" placeholder="Nom de l'option" #paymentInput />
+            <button type="button" (click)="addAddress('payment', paymentInput.value)">Ajouter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="submit" value="Enregistrer" />
+  </form>
+</div>

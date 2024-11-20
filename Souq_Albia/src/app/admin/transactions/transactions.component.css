@@ -1,0 +1,61 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1; /* Couleur de survol */
+}
+
+table tbody td {
+  vertical-align: middle;
+}
+
+/* Styles pour le bouton de suppression */
+button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+/* Message d'erreur */
+.error {
+  color: #e74c3c;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Styles pour le header */
+.header {
+  background-color: #3498db;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}

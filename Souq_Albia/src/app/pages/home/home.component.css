@@ -1,0 +1,406 @@
+.herosection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  background-image: url('https://a.cdn-hotels.com/gdcs/production89/d67/5249b4ca-445d-4502-9028-367fc967797c.jpg');
+  width: 100%;
+  height: 534px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  text-align: center;
+}
+
+.herosection h1 {
+  color: var(--white);
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+.herosection p {
+  font-weight: lighter;
+  color: var(--white);
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 15px;
+}
+
+.herosection input {
+  margin: 0 auto;
+  display: block;
+  width: 507px;
+  height: 37px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 20px;
+}
+
+.herosection button {
+  margin: 0 auto;
+  display: block;
+  width: 116px;
+  height: 37px;
+  border-radius: 20px;
+  color: var(--white);
+  background-color: var(--primary-color);
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 20px;
+  border: none;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.herosection button:hover {
+  color: var(--primary-color);
+  background-color: black;
+  cursor: pointer;
+}
+
+.herosection a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.herosection a:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.cats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.categorie1{
+  border: solid var(--primary-color) 1px;
+  height: 100%;
+  width:100%;
+  margin: 10px;
+  padding-bottom:10px;
+}
+.categorie1 a{
+text-decoration: none;
+margin-left: 10px;
+color:var(--primary-color);
+transition: color 0.3s ease;
+}
+.categorie1 h4{
+  text-align: center;
+  margin-top:5px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.categorie1 h6{
+  border: solid var(--primary-color) 1 px;
+  background-color: var(--primary-color);
+  width:80%;
+  height: 38px;
+  margin-left:25px;
+  border-radius: 10px;
+  text-align:center;
+  line-height: 1.9;
+  color:var(--white);
+  font-weight:lighter;
+  font-family: "Hubballi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.1rem;
+}
+.categorie1 a:hover{
+  color:black;
+  cursor: pointer;
+}
+
+.EncheresCours {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 120px;
+  margin: 0 auto;
+}
+.EncheresCours .title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px
+}
+.EncheresCours .title h2 {
+  font-weight: lighter;
+  text-align: left;
+  margin-right: 700px;
+  width: 200px;
+
+}
+.EncheresCours .ligne {
+  width: 900px;
+  height: 1px;
+  background-color: var(--primary-color);
+  margin-bottom: 20px;
+  margin-top: -15px;
+}
+
+.produit {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto 20px;
+  width: 900px;
+}
+
+.produit img {
+  width: 166px;
+  margin:6px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.produit .produitinfos {
+  flex-grow: 1;
+  padding: 10px;
+  line-height: 0.01rem;
+
+}
+.produit .produitinfos  .desc{
+    font-weight:lighter;
+    line-height: 1.1rem;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+}
+.produit .produitinfos  .datefini{
+  color:var(--red);
+  max-width: 100%;
+}
+.produit .produitinfos .titre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.justthetwoofus{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.produit .produitinfos h4 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.produit .produitinfos em {
+  font-style: italic;
+  font-weight:lighter;
+}
+
+.produit .produitinfos h5 {
+  margin-top: 5px;
+  font-size: 16px;
+  text-align: left;
+
+}
+
+.produit .produitinfos button {
+  margin-top: 10px;
+  width: 167px;
+  height: 23px;
+  transition: color ease 0.3s;
+  padding: 5px 10px;
+  background-color: var(--secondary-color);
+  color: black;
+  border: none;
+  border-radius: 5px;
+   margin-right:0px;
+  cursor: pointer;
+}
+
+.produit .produitinfos button:hover {
+  background-color: black;
+ cursor: pointer;
+  color: var(--white);
+}
+
+.EncheresCours_button {
+  margin: 10px 0;
+  background-color: var(--secondary-color);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 16px;
+}
+
+.EncheresCours_button:hover {
+  background-color: black;
+  color: var(--white);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid red;
+  margin-top: -7px;
+  margin-left: 10px;
+  float: right;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  width: 100%;
+}
+
+li {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: var(--white);
+  width: 80%;
+  margin-bottom: 5px;
+
+}
+
+li a {
+  text-decoration: none;
+  color: var(--primary-color);
+
+}
+li a h3 {
+  font-size: 16px;
+
+}
+li a:hover {
+  color: black;
+}
+.inactive {
+  opacity: 0.5; /* Makes the inactive enchères appear faded */
+  pointer-events: none; /* Optional: Disables interaction with inactive items */
+}
+
+/* Responsive styles */
+/* Tablet (min-width: 768px) */
+@media (max-width: 1024px) {
+  .EncheresCours .title h2 {
+    margin-right: 0;
+    width: auto;
+    text-align: center;
+  }
+
+  .EncheresCours .ligne {
+    width: 80%;
+  }
+
+  .produit {
+    width: 80%;
+    max-width: 900px;
+    flex-direction: column;
+  }
+
+  .produit img {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .produit .produitinfos {
+    padding: 15px;
+
+  }
+
+  .produit .produitinfos button {
+    width: 50%;
+    height: auto;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .EncheresCours {
+    padding: 10px;
+  }
+  .cats{
+    grid-template-columns: repeat(2, 3fr);
+    width: 80%;
+    height: 100%;
+  }
+  .categorie1 h6{
+    margin-left: 20px;
+  }
+  .content {
+    width: 80%;
+  }
+  .herosection input {
+    width: 80%;
+  }
+  .EncheresCours .title h2 {
+    margin-right: 0;
+    text-align: center;
+    width: 70%;
+  }
+
+  .EncheresCours .ligne {
+    width: 70%;
+  }
+
+  .produit {
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    max-width: 70%;
+    margin: 0 auto 10px;
+    padding: 10px;
+  }
+
+  .produit img {
+    width: 50%;
+    height: auto;
+    margin: 0;
+  }
+
+  .produit .produitinfos {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .produit .produitinfos .desc {
+    line-height: 1.3rem;
+  }
+
+  .justthetwoofus {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .produit .produitinfos  .titre{
+    font-size: 10px;
+  }
+  .produit .produitinfos button {
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+}

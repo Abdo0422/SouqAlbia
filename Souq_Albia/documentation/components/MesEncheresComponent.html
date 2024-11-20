@@ -1,0 +1,1270 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>souq-albia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">souq-albia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MesEncheresComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/EspaceUser/mes-encheres/mes-encheres.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-mes-encheres</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./mes-encheres.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./mes-encheres.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#enchereList" >enchereList</a>
+                            </li>
+                            <li>
+                                <a href="#isDropdownOpen" >isDropdownOpen</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteEnchere" >deleteEnchere</a>
+                            </li>
+                            <li>
+                                <a href="#editEnchere" >editEnchere</a>
+                            </li>
+                            <li>
+                                <a href="#getRemainingTime" >getRemainingTime</a>
+                            </li>
+                            <li>
+                                <a href="#loadEncheres" >loadEncheres</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#sortWatchlist" >sortWatchlist</a>
+                            </li>
+                            <li>
+                                <a href="#toggleDropdown" >toggleDropdown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient, authService: <a href="../injectables/AuthenticationService.html" target="_self">AuthenticationService</a>, enchereService: <a href="../injectables/EnchereService.html" target="_self">EnchereService</a>, alertService: <a href="../injectables/AlertServicesService.html" target="_self">AlertServicesService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>enchereService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnchereService.html" target="_self" >EnchereService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AlertServicesService.html" target="_self" >AlertServicesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteEnchere"></a>
+                    <span class="name">
+                        <span ><b>deleteEnchere</b></span>
+                        <a href="#deleteEnchere"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteEnchere(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editEnchere"></a>
+                    <span class="name">
+                        <span ><b>editEnchere</b></span>
+                        <a href="#editEnchere"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editEnchere(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRemainingTime"></a>
+                    <span class="name">
+                        <span ><b>getRemainingTime</b></span>
+                        <a href="#getRemainingTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRemainingTime(dateFin: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dateFin</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadEncheres"></a>
+                    <span class="name">
+                        <span ><b>loadEncheres</b></span>
+                        <a href="#loadEncheres"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadEncheres()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortWatchlist"></a>
+                    <span class="name">
+                        <span ><b>sortWatchlist</b></span>
+                        <a href="#sortWatchlist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortWatchlist(sortType: "oldest" | "newest")</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>sortType</td>
+                                            <td>
+                                                        <code>&quot;oldest&quot; | &quot;newest&quot;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleDropdown"></a>
+                    <span class="name">
+                        <span ><b>toggleDropdown</b></span>
+                        <a href="#toggleDropdown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleDropdown()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enchereList"></a>
+                    <span class="name">
+                        <span ><b>enchereList</b></span>
+                        <a href="#enchereList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Enchere.html" target="_self" >Enchere[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDropdownOpen"></a>
+                    <span class="name">
+                        <span ><b>isDropdownOpen</b></span>
+                        <a href="#isDropdownOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/EspaceUser/mes-encheres/mes-encheres.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { AuthenticationService } from &#x27;../../services/authentication.service&#x27;;
+import { Enchere } from &#x27;../../../model/Enchere&#x27;;
+import { EnchereService } from &#x27;../../services/enchere.service&#x27;;
+import { AlertServicesService } from &#x27;../../services/alert-services.service&#x27;;
+@Component({
+  selector: &#x27;app-mes-encheres&#x27;,
+  templateUrl: &#x27;./mes-encheres.component.html&#x27;,
+  styleUrls: [&#x27;./mes-encheres.component.css&#x27;]
+})
+export class MesEncheresComponent implements OnInit {
+  enchereList: Enchere[] &#x3D; []; 
+  isDropdownOpen: boolean &#x3D; false;
+
+  constructor(private http: HttpClient, private authService: AuthenticationService, private enchereService: EnchereService , private alertService: AlertServicesService) { }
+
+  ngOnInit(): void {
+    this.loadEncheres();
+  }
+
+  loadEncheres(): void {
+    const userId &#x3D; this.authService.getCurrentUserId();
+    if (userId) {
+      this.http.get&lt;Enchere[]&gt;(&#x60;http://localhost/Souq_AlbiaBackend/getEncheresByVendeur.php?vendeur_id&#x3D;${userId}&#x60;)
+        .subscribe(
+          data &#x3D;&gt; {
+            this.enchereList &#x3D; data;
+            console.log(&#x27;Enchères chargées:&#x27;, this.enchereList); // Log loaded enchères
+          },
+          error &#x3D;&gt; {
+            console.error(&#x27;Erreur lors de la récupération des enchères:&#x27;, error); // Log error
+          }
+        );
+    } else {
+      console.error(&#x27;Utilisateur non connecté. Impossible de charger les enchères.&#x27;); // Log user not connected
+    }
+  }
+
+  deleteEnchere(id: number): void {
+    if (confirm(&#x27;Are you sure you want to delete this enchere?&#x27;)) {
+        this.enchereService.deleteEnchere(id).subscribe(
+            response &#x3D;&gt; {
+                console.log(&#x27;Enchere deleted successfully.&#x27;, response);
+                this.alertService.addAlert(&#x27;Enchere deleted successfully.&#x27;);
+                window.location.reload();
+
+              },
+            error &#x3D;&gt; {
+                // Log the error object to understand its structure
+                console.error(&#x27;Error deleting enchere:&#x27;, error);
+
+                // Check if error contains a response body with an error message
+                let errorMessage &#x3D; &#x27;An error occurred while deleting the enchere.&#x27;;
+                if (error.error &amp;&amp; error.error.message) {
+                    errorMessage &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;;
+                } else if (error.message) {
+                    errorMessage &#x3D; &#x60;An error occurred: ${error.message}&#x60;;
+                }
+
+                alert(errorMessage);
+            }
+        );
+    }
+}
+
+  editEnchere(id: number): void {
+    // Redirect to edit page or open a modal for editing
+    console.log(&#x60;Modifier l’enchère ${id}&#x60;);
+    // Example: this.router.navigate([&#x27;/edit-enchere&#x27;, id]);
+  }
+  toggleDropdown(): void {
+    this.isDropdownOpen &#x3D; !this.isDropdownOpen;
+  }
+
+  sortWatchlist(sortType: &#x27;oldest&#x27; | &#x27;newest&#x27;): void {
+    this.isDropdownOpen &#x3D; false;
+    if (sortType &#x3D;&#x3D;&#x3D; &#x27;oldest&#x27;) {
+      this.enchereList.sort((a, b) &#x3D;&gt; new Date(a.dateFin).getTime() - new Date(b.dateFin).getTime());
+    } else if (sortType &#x3D;&#x3D;&#x3D; &#x27;newest&#x27;) {
+      this.enchereList.sort((a, b) &#x3D;&gt; new Date(b.dateFin).getTime() - new Date(a.dateFin).getTime());
+    }
+  }
+  getRemainingTime(dateFin: Date): string {
+    const now &#x3D; new Date();
+    const endDate &#x3D; new Date(dateFin);
+    const diffMs &#x3D; endDate.getTime() - now.getTime();
+
+    if (diffMs &lt;&#x3D; 0) {
+      return &#x27;Terminé&#x27;;
+    }
+    else{
+    const days &#x3D; Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const hours &#x3D; Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes &#x3D; Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+    return &#x60;Se termine en ${days}j ${hours}h ${minutes}min&#x60;;}
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;right&quot;&gt;
+  &lt;div class&#x3D;&quot;titre&quot;&gt;
+    &lt;h2&gt;Mes Enchères&lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;dpn&quot;&gt;
+    &lt;p&gt;Voir :&lt;/p&gt;
+    &lt;div class&#x3D;&quot;dropdown&quot;&gt;
+      &lt;button class&#x3D;&quot;dropdown-btn&quot; (click)&#x3D;&quot;toggleDropdown()&quot;&gt;Choisir&lt;/button&gt;
+      &lt;div class&#x3D;&quot;dropdown-content&quot; [ngClass]&#x3D;&quot;{&#x27;show&#x27;: isDropdownOpen}&quot;&gt;
+        &lt;a (click)&#x3D;&quot;sortWatchlist(&#x27;oldest&#x27;)&quot;&gt;Le plus ancien&lt;/a&gt;
+        &lt;a (click)&#x3D;&quot;sortWatchlist(&#x27;newest&#x27;)&quot;&gt;Nouveauté&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div *ngFor&#x3D;&quot;let enchere of enchereList&quot; class&#x3D;&quot;Produit&quot;&gt;
+    &lt;img [src]&#x3D;&quot;enchere.image&quot; width&#x3D;&quot;150px&quot; height&#x3D;&quot;100%&quot;&gt;
+    &lt;div class&#x3D;&quot;textpro&quot;&gt;
+      &lt;h2&gt;{{ enchere.nom }}&lt;/h2&gt;
+      &lt;span id&#x3D;&quot;offre&quot;&gt;
+        &lt;p&gt;L’offre plus élevée:&lt;/p&gt;
+        &lt;em&gt;{{ enchere.prixactuel }} DH&lt;/em&gt;
+      &lt;/span&gt;
+      &lt;span class&#x3D;&quot;date&quot;&gt;
+        &lt;p&gt;{{ getRemainingTime(enchere.dateFin) }}&lt;/p&gt;
+        &lt;img src&#x3D;&quot;https://www.kindpng.com/picc/m/156-1564712_transparent-red-triangle-png-png-download.png&quot; alt&#x3D;&quot;Transparent Red Triangle Png&quot; width&#x3D;&quot;20px&quot; height&#x3D;&quot;10px&quot;&gt;
+      &lt;/span&gt;
+      &lt;div class&#x3D;&quot;btns&quot;&gt;
+        &lt;a (click)&#x3D;&quot;editEnchere(enchere.id)&quot; class&#x3D;&quot;mod&quot;&gt;Modifier&lt;/a&gt;
+        &lt;a (click)&#x3D;&quot;deleteEnchere(enchere.id)&quot; class&#x3D;&quot;supp&quot;&gt;Supprimer&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p *ngIf&#x3D;&quot;enchereList.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;Aucune enchère ici&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./mes-encheres.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.right{
+  float: right;
+  width: 700px;
+}
+.right .titre h2{
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 154px;
+  height: 27px;
+  color: var(--white);
+    font-family: &quot;Inder&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.right .dpn{
+  display: flex;
+  float: right;
+}
+.right .dpn p{
+  margin-top: 5px;
+  font-family: &quot;Inika&quot;, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  margin-right: 5px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  padding: 5px 30px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content a:hover {background-color: var(--primary-color);}
+
+.show {
+  display: block;
+}
+.right  .Produit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100px;
+}
+.right .Produit img{
+  margin-right: 40px;
+}
+.right  .textpro{
+  display: block;
+}
+.right  .textpro h2{
+    font-family: &quot;Inder&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  width:180px;
+}
+.right .textpro p{
+  width:450px;
+  font-family: &quot;Inder&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .textpro span{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.right .textpro .date{
+  min-width: 100%;
+}
+.right .textpro .date img{
+  float: right;
+  margin-top: 7px;
+}
+.right .Produit .btns{
+  margin-left: -150px
+}
+#offre p{
+  color:var(--primary-color);
+}
+#offre em{
+  margin-left: -280px;
+    font-family: &quot;Inder&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+}
+.right .textpro span p{
+  margin-top: 0;
+  color: var(--red);
+}
+.right  .textpro span img{
+ transform: rotate(-90deg);
+   margin-left: -230px;
+}
+.right .Produit .btns a{
+  cursor: pointer;
+  font-family: &quot;Inika&quot;, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px;
+  margin: 10px;
+  transition: 0.5s;
+
+}
+.right .Produit .btns .supp{
+  color: var(--red);
+  background-color: var(--white);
+  border: 1px solid var(--red);
+
+}
+.right .Produit .btns .mod{
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  margin-right: 18px;
+}
+.right .Produit a{
+  border:1px solid var(--primary-color);
+  border-radius: 15px;
+  font-family: &quot;Inder&quot;, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  float: right;
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+.right .Produit a:hover{
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border:none;
+}
+@media screen and (max-width: 768px) {
+  .both {
+    width: 100%
+  }
+
+  .left {
+    width: 50%
+  }
+
+  .right {
+    width: 50%
+  }
+
+  .dropdown:hover .sub {
+    position: static;
+    display: block;
+  }
+
+  .right .dpn {
+    flex-direction: column;
+    align-items: center;
+  }
+  .right .Produit {
+    max-width: 300px;
+  }
+
+  .right .textpro h2 {
+    max-width: 20%;
+    text-align: center;
+  }
+
+  .right .textpro p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .right .Produit .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="right">  <div class="titre">    <h2>Mes Enchères</h2>  </div>  <div class="dpn">    <p>Voir :</p>    <div class="dropdown">      <button class="dropdown-btn" (click)="toggleDropdown()">Choisir</button>      <div class="dropdown-content" [ngClass]="{\'show\': isDropdownOpen}">        <a (click)="sortWatchlist(\'oldest\')">Le plus ancien</a>        <a (click)="sortWatchlist(\'newest\')">Nouveauté</a>      </div>    </div>  </div>  <div *ngFor="let enchere of enchereList" class="Produit">    <img [src]="enchere.image" width="150px" height="100%">    <div class="textpro">      <h2>{{ enchere.nom }}</h2>      <span id="offre">        <p>L’offre plus élevée:</p>        <em>{{ enchere.prixactuel }} DH</em>      </span>      <span class="date">        <p>{{ getRemainingTime(enchere.dateFin) }}</p>        <img src="https://www.kindpng.com/picc/m/156-1564712_transparent-red-triangle-png-png-download.png" alt="Transparent Red Triangle Png" width="20px" height="10px">      </span>      <div class="btns">        <a (click)="editEnchere(enchere.id)" class="mod">Modifier</a>        <a (click)="deleteEnchere(enchere.id)" class="supp">Supprimer</a>      </div>    </div>  </div>  <p *ngIf="enchereList.length === 0">Aucune enchère ici</p></div></div>'
+    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AideComponent', 'selector': 'app-aide'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArticleTendanceComponent', 'selector': 'app-article-tendance'},{'name': 'CatgoriePageComponent', 'selector': 'app-catgorie-page'},{'name': 'ChatroomComponent', 'selector': 'app-chatroom'},{'name': 'CommentairesComponent', 'selector': 'app-commentaires'},{'name': 'ConnexionComponent', 'selector': 'app-connexion'},{'name': 'CreateEnchereComponent', 'selector': 'app-create-enchere'},{'name': 'DerniereEnchereComponent', 'selector': 'app-derniere-enchere'},{'name': 'EncherePageComponent', 'selector': 'app-enchere-page'},{'name': 'FavorisComponent', 'selector': 'app-favoris'},{'name': 'HistoriqueComponent', 'selector': 'app-historique'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InscriptionComponent', 'selector': 'app-inscription'},{'name': 'ManageEncheresComponent', 'selector': 'app-manage-encheres'},{'name': 'ManageUsersComponent', 'selector': 'app-manage-users'},{'name': 'MesEncheresComponent', 'selector': 'app-mes-encheres'},{'name': 'ObjetsGagnesComponent', 'selector': 'app-objets-gagnes'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SousCategoriePageComponent', 'selector': 'app-sous-categorie-page'},{'name': 'TableauDeBordComponent', 'selector': 'app-tableau-de-bord'},{'name': 'UserSpaceComponent', 'selector': 'app-user-space'},{'name': 'WatchlistPopupComponent', 'selector': 'app-watchlist-popup'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MesEncheresComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MesEncheresComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

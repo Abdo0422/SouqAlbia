@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap');
+
+:host{
+  --primary-color:#BC9C22;
+  --secondary-color:#D4AF22;
+  --white:#FFFFFF;
+  --grey:#D9D9D9;
+  --red:#F32C2C;
+  --darkgrey:#727272;
+}
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 2%;
+  padding: 1% 4%;
+}
+.container h2 {
+  font-size: 24px;
+  text-align: left;
+ font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right:300px;
+}
+.both {
+  display: flex;
+  width: 800px;
+}
+
+.left {
+  flex: 1;
+  margin-right: -100px;
+  margin-top: 100px
+}
+ .left ul{
+  width: 218px;
+  height: 412px;
+}
+.left li {
+  list-style: none;
+  margin-bottom: 26px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.left li a{
+  transition: 0.5s;
+}
+.left li a:hover{
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border-radius:10px;
+}
+.right {
+  flex: 1;
+  width: 543px;
+  height: 444px;
+}
+.topsouscategorie{
+  display: flex;
+  justify-content: space-between;
+}
+.topsouscategorie h3{
+   font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px
+}
+.topsouscategorie button {
+  width: 130px;
+  height: 27px;
+  margin-top: 17px;
+  border-radius: 9px;
+  border: none;
+  background-color: var( --primary-color);
+  color:var(--white);
+    font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  transition: 0.5s;
+}
+.topsouscategorie button:hover{
+  cursor: pointer;
+  background-color:var(--white) ;
+  color:var( --primary-color);
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.souscategorie {
+  padding: 10px;
+  text-align: center;
+  transition: 0.5s;
+}
+.souscategorie a{
+  text-decoration: none;
+}
+.souscategorie:hover{
+  cursor: pointer;
+  background-color: var(--grey);
+  border-radius:10px;
+}
+.souscategorie h3{
+ font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: black;
+}
+.souscategorie em{
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  color:var( --darkgrey);
+}
+
+.souscategorie img {
+  height: auto;
+  width: auto;
+}
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .left, .right {
+    margin-right: 0;
+    max-width: 100%;
+
+  }
+  .both {
+    width: 100%;
+  }
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .container h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-right: 0;
+  }
+  .left, .right {
+    margin-right: 0;
+    width: 100%;
+
+  }
+  .left li a{
+    width: 50%;
+    font-size: 10px;
+  }
+  .souscategorie a {
+    width: 100%;
+  }
+  .both {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .topsouscategorie h3 {
+    font-size: 18px;
+  }
+
+  .topsouscategorie button {
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .souscategorie h3 {
+    font-size: 14px;
+  }
+
+  .souscategorie em {
+    font-size: 12px;
+  }
+}

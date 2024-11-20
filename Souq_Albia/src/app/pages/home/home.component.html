@@ -1,0 +1,74 @@
+<div class="herosection">
+  <div class="content">
+    <h1>Enchérir en toute confiance,<br> connecter la communauté !</h1>
+    <p>Enchérir sur vos trésors préférés, à portée de clic</p>
+
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search Enchere" (input)="onSearch()" />
+
+    <ul *ngIf="searchTerm && filteredEncheres.length">
+      <li *ngFor="let enchere of filteredEncheres" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+        <a routerLink="/EncherePage/{{enchere.produit_id}}">
+          <h3>{{ enchere.nom }}</h3>
+        </a>
+      </li>
+    </ul>
+    <p *ngIf="searchTerm && !filteredEncheres.length">Not found</p>
+
+    <a href="/CategoriePage">Explorez</a>
+  </div>
+</div>
+
+<div class="cats">
+  <div class="categories" *ngFor="let categorie of categories">
+    <div class="categorie1">
+      <h4>{{categorie.nom}}</h4>
+      <img src="{{categorie.image}}" width="100%" height="155px" />
+      <h6>{{categorie.description}}</h6>
+      <a (click)="goToCategory(categorie)">Voir les enchères</a>
+    </div>
+  </div>
+</div>
+
+<div class="EncheresCours">
+  <div class="title">
+    <h2>Enchères en cours</h2>
+    <div class="ligne"></div>
+  </div>
+
+  <div class="produit" *ngFor="let enchereItem of enchereDataCours" [ngClass]="{'inactive': enchereItem.status === 'inactive'}">
+    <img src="{{ enchereItem.image }}" width="166px" height="155px" />
+    <div class="produitinfos">
+      <h4 class="titre">{{ enchereItem.nom }} <em>({{ enchereItem.NumBids }} Offres)</em></h4>
+      <h5 class="desc">{{ enchereItem.description }}</h5>
+      <h5>{{ enchereItem.prixactuel }}DH</h5>
+      <div class="justthetwoofus">
+        <h5 class="datefini">{{ getRemainingTime(enchereItem) }} <div class="triangle"></div></h5>
+        <button (click)="onSelectEnchere(enchereItem)">Parcourir l'enchère</button>
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/DerniereEnchere" class="EncheresCours_button">Afficher Tout</a>
+</div>
+
+<div class="EncheresCours">
+  <div class="title">
+    <h2>Tendance</h2>
+    <div class="ligne"></div>
+  </div>
+
+  <div class="produit" *ngFor="let enchereItem of enchereDataTendance" [ngClass]="{'inactive': enchereItem.status === 'inactive'}">
+    <img src="{{ enchereItem.image }}" width="166px" height="155px" />
+    <div class="produitinfos">
+      <h4 class="titre">{{ enchereItem.nom }} <em>({{ enchereItem.NumBids }} Offres)</em></h4>
+      <h5 class="desc">{{ enchereItem.description }}</h5>
+      <h5>{{ enchereItem.prixactuel }}DH</h5>
+      <div class="justthetwoofus">
+        <h5 class="datefini">{{ getRemainingTime(enchereItem) }} <div class="triangle"></div></h5>
+        <button (click)="onSelectEnchere(enchereItem)">Parcourir l'enchère</button>
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/ArticleTendance" class="EncheresCours_button">Afficher Tout</a>
+</div>

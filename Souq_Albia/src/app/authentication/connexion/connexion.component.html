@@ -1,0 +1,29 @@
+<div class="body">
+  <div class="container">
+    <h2>Connectez-vous à Souq Albia</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-input">
+        <label>Email</label><br>
+        <input type="text" formControlName="email" /><br>
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <div *ngIf="loginForm.get('email')?.errors?.['required']" style="color: red;">Email is required.</div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']" style="color: red;">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="form-input">
+        <label>Mot de passe</label><br>
+        <input type="password" formControlName="password" /><br>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <div *ngIf="loginForm.get('password')?.errors?.['required']" style="color: red;">Password is required.</div>
+        </div>
+      </div>
+      <div class="check1">
+        <input type="checkbox" class="check" />
+        <label><em>Souviens-toi de moi</em></label><br>
+      </div>
+      <div class="btn-container"><button type="submit" [disabled]="loginForm.invalid">Se Connecter</button></div><br>
+      <p>Vous n'avez pas un compte? <a routerLink="/Inscription">Registre</a></p>
+    </form>
+    <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+  </div>
+</div>

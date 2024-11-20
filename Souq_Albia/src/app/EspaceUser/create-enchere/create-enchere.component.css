@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inder&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inconsolata:wght@200..900&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans+Devanagari:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Imprima&family=Inconsolata:wght@200..900&family=Inder&family=Inika:wght@400;700&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
+
+
+:host {
+  --primary-color: #bc9c22;
+  --secondary-color: #d4af22;
+  --white: #ffffff;
+  --grey: #d9d9d9;
+  --red: #f32c2c;
+  --darkgrey: #727272;
+  --black: #000000;
+  --blue: #2256bc;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+  margin-top: 2%;
+  padding: 1% 4%;
+}
+.container h2 {
+  font-size: 24px;
+  text-align: left;
+  font-family: "IBM Plex Sans Devanagari", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 300px;
+}
+.breadcrumbs {
+  font-size: 16px;
+  margin-top: -25px;
+  text-align: center;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #999;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.breadcrumbs .current {
+  color: black;
+  font-weight: 600;
+}
+
+.breadcrumbs span {
+  color: #333;
+  margin: 0 5px;
+}
+.ligne {
+  border: 1px solid var(--primary-color);
+  margin-top: -15px;
+}
+.Espace {
+  margin: 60px;
+  margin-top: 0;
+}
+.Espace h3 {
+  font-optical-sizing: auto;
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: var(--primary-color);
+}
+form {
+  margin: 80px;
+  margin-top: 0;
+}
+.form-group label:first-child {
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 17px;
+}
+.etat label:first-child,
+.etat label {
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+}
+.form-group input[type="text"],
+input[type="number"] {
+  width: 380px;
+  height: 25px;
+  background-color: #f5f5f5f5;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.form-group textarea {
+  width: 380px;
+  height: 240px;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  background-color: #f5f5f5f5;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+}
+.etat label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.etat label input {
+  margin-right: 10px;
+}
+
+.etat {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  width: 17%;
+  background-color: #f5f5f5f5;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.select-wrapper::after {
+  content: "\25B2 \25BC";
+  position: absolute;
+  top: 50%;
+  left: 200px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--primary-color);
+}
+
+input[type="file"] {
+  width: 380px;
+  height: 25px;
+  background-color: #f5f5f5f5;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  cursor: pointer;
+}
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  cursor: pointer;
+  width: 300px;
+  transition: 0.4s ease-in-out;
+}
+button[type="reset"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  font-family: "Ibarra Real Nova", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  cursor: pointer;
+  width: 300px;
+  transition: 0.4s ease-in-out;
+}
+button[type="submit"]:hover {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white);
+}
+button[type="reset"]:hover {
+  background-color: var(--red);
+  border: none;
+  color: var(--white);
+}
+.country-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group .input-group-text {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+input[type="number"] {
+  padding-left: 22px;
+  padding-top: 5px;
+  width: 360px;
+  height: 20px;
+}
+.country-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.country-list li:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .top input {
+    margin-bottom: 10px;
+  }
+
+  .signin,
+  .signup,
+  .aide {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .bottom ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container h2 {
+    margin-right: 0;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group textarea,
+  .form-group select,
+  .form-group input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button[type="submit"],
+  button[type="reset"] {
+    width: 100%;
+    max-width: 100%;
+  }
+}

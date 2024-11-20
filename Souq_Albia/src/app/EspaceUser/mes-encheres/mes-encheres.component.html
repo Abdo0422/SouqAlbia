@@ -1,0 +1,34 @@
+<div class="right">
+  <div class="titre">
+    <h2>Mes Enchères</h2>
+  </div>
+  <div class="dpn">
+    <p>Voir :</p>
+    <div class="dropdown">
+      <button class="dropdown-btn" (click)="toggleDropdown()">Choisir</button>
+      <div class="dropdown-content" [ngClass]="{'show': isDropdownOpen}">
+        <a (click)="sortWatchlist('oldest')">Le plus ancien</a>
+        <a (click)="sortWatchlist('newest')">Nouveauté</a>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let enchere of enchereList" class="Produit">
+    <img [src]="enchere.image" width="150px" height="100%">
+    <div class="textpro">
+      <h2>{{ enchere.nom }}</h2>
+      <span id="offre">
+        <p>L’offre plus élevée:</p>
+        <em>{{ enchere.prixactuel }} DH</em>
+      </span>
+      <span class="date">
+        <p>{{ getRemainingTime(enchere.dateFin) }}</p>
+        <img src="https://www.kindpng.com/picc/m/156-1564712_transparent-red-triangle-png-png-download.png" alt="Transparent Red Triangle Png" width="20px" height="10px">
+      </span>
+      <div class="btns">
+        <a (click)="editEnchere(enchere.id)" class="mod">Modifier</a>
+        <a (click)="deleteEnchere(enchere.id)" class="supp">Supprimer</a>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="enchereList.length === 0">Aucune enchère ici</p>
+</div>

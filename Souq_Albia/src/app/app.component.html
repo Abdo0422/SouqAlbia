@@ -1,0 +1,224 @@
+<div class="body">
+  <div class="top">
+    <div class="slide-right">
+      <a routerLink="/"><img [src]="image"></a>
+    </div>
+
+     <!-- Hamburger Icon for Small Screens -->
+     <div class="hamburger" (click)="toggleSidebar()">
+      &#9776; <!-- Hamburger icon (Unicode) -->
+    </div>
+
+    <!-- Sidebar that shows on small screens -->
+    <div class="sidebar" [class.active]="isSidebarActive">
+      <!-- Same buttons as in the top bar, hidden on larger screens -->
+      <button (click)="closeSidebar()" class="closebtn"><img src="assets/close.png" style="width: 20px;  filter: invert(100%);"></button>
+
+
+      <div *ngIf="currentUser">
+        <ng-container *ngIf="!isHomeComponent()">
+          <button (click)="openSearch()">Search</button>
+          <div class="search-popup" *ngIf="isSearchPopupVisible">
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="onSearch()" />
+            <button (click)="closeSearch()">Close</button>
+
+            <div *ngIf="filteredEncheres.length > 0">
+              <h3>Search Results:</h3>
+              <ul>
+                <li *ngFor="let enchere of filteredEncheres" (click)="onSelectEnchere(enchere)" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+                  {{ enchere.nom }}
+                </li>
+              </ul>
+            </div>
+
+            <div *ngIf="filteredEncheres.length === 0 && searchTerm">
+              <p>No results found for "{{ searchTerm }}".</p>
+            </div>
+          </div>
+        </ng-container>
+
+        <div class="user-dropdown">
+          <button (click)="toggleDropdown()" class="User">{{ currentUser.nom }}</button>
+          <div *ngIf="dropdownOpen" class="dropdown-content">
+            <a *ngIf="isAdmin" routerLink="/admin" style="margin-top: 35px;">Espace Admin</a>
+            <a routerLink="/UserSpace">Espace Personnel</a>
+            <a (click)="logout()">Déconnexion</a>
+          </div>
+        </div>
+
+        <a class="Favorite" (click)="showPopup()">Favoris</a>
+        <app-watchlist-popup *ngIf="isPopupVisible" (close)="closePopup()"></app-watchlist-popup>
+
+        <div class="dropdown">
+          <button (click)="toggleDropdown()" class="alert">
+            Alertes
+            <span class="alert-badge" *ngIf="getAlertCount() > 0">
+              {{ getAlertCount() }}
+            </span>
+          </button>
+          <div *ngIf="dropdownOpen" class="dropdown-content1">
+            <ul>
+              <li *ngIf="getAlertCount() === 0" class="no-alerts-message">Aucun alert</li>
+              <li>
+                <button *ngIf="getAlertCount() > 0" (click)="clearAlerts()" class="clear-alerts-button">
+                Clear Alerts
+              </button>
+            </li>
+              <li *ngFor="let alert of getAlerts()" class="alert-item">
+                <button (click)="handleAlertClick(alert)">{{ alert }}</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="aide" routerLink="/help">Aide</a>
+      </div>
+
+      <div *ngIf="!currentUser">
+        <ng-container *ngIf="!isHomeComponent()">
+          <button (click)="openSearch()">Search</button>
+          <div class="search-popup" *ngIf="isSearchPopupVisible">
+            <button (click)="closeSearch()">Close</button>
+            <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="onSearch()" />
+
+            <div *ngIf="filteredEncheres.length > 0">
+              <h3>Search Results:</h3>
+              <ul>
+                <li *ngFor="let enchere of filteredEncheres" (click)="onSelectEnchere(enchere)" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+                  {{ enchere.nom }}
+                </li>
+              </ul>
+            </div>
+
+            <div *ngIf="filteredEncheres.length === 0 && searchTerm">
+              <p>No results found for "{{ searchTerm }}".</p>
+            </div>
+          </div>
+        </ng-container>
+        <a class="signup" routerLink="/Inscription">S'inscrire</a>
+        <a class="signin" routerLink="/Connexion">Se Connecter</a>
+        <a class="aide" routerLink="/help">Aide</a>
+      </div>
+    </div>
+    <div *ngIf="isPaymentPopupVisible" class="popup">
+      <div class="popup-content">
+        <h3>Nouveaux paiements pour vos enchères</h3>
+
+        <!-- Displaying notifications -->
+        <ul class="notification-list">
+          <li *ngFor="let notification of paymentNotifications" class="notification-item">
+            <div class="notification-details">
+              <strong>Montant du paiement :</strong> {{ notification.montant }}$<br>
+              <strong>ID de l'enchère :</strong> {{ notification.enchere_id }}<br>
+              <strong>Nom du produit :</strong> {{ notification.produit_nom }}<br>
+              <strong>Acheteur :</strong> {{ notification.acheteur_nom }}<br>
+              <strong>Adresse de l'acheteur :</strong> {{ notification.acheteur_adresse }}<br>
+              <strong>Téléphone de l'acheteur :</strong> {{ notification.acheteur_telephone }}<br>
+              <strong>Date :</strong> {{ notification.date | date:'medium' }} <!-- Using Angular Date Pipe -->
+            </div>
+          </li>
+        </ul>
+
+        <button (click)="closePaymentPopup()" class="close-button" aria-label="Fermer les notifications de paiement">
+          <img src="assets/close.png" alt="Fermer" style="width: 20px;padding: 5px; filter: invert(100%);">
+        </button> <!-- Close button -->
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="buttons">
+      <div *ngIf="currentUser">
+        <ng-container *ngIf="!isHomeComponent()">
+          <input type="text" placeholder="Rechercher..." [(ngModel)]="searchTerm" (input)="onSearch()" class="search">
+          <ul *ngIf="searchTerm && filteredEncheres.length > 0" class="list1">
+            <li *ngFor="let enchere of filteredEncheres" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+              <a (click)="onSelectEnchere(enchere)">
+                <h3>{{ enchere.nom }}</h3>
+              </a>
+            </li>
+          </ul>
+
+          <p *ngIf="searchTerm && filteredEncheres.length === 0" style="position: absolute;color: #888;font-style: italic;text-align: center;">Aucun résultat trouvé</p>
+        </ng-container>
+        <div class="user-dropdown">
+          <button (click)="toggleDropdown()" class="User">{{ currentUser.nom }}</button>
+          <div *ngIf="dropdownOpen" class="dropdown-content">
+            <a *ngIf="isAdmin" routerLink="/admin" style="margin-top: 35px;">Espace Admin</a>
+            <a routerLink="/UserSpace">Espace Personnel</a>
+            <a (click)="logout()">Déconnexion</a>
+          </div>
+        </div>
+
+        <a class="Favorite" (click)="showPopup()">Favoris</a>
+        <app-watchlist-popup *ngIf="isPopupVisible" (close)="closePopup()"></app-watchlist-popup>
+
+        <div class="dropdown">
+          <button (click)="toggleDropdown()" class="alert">
+            Alertes
+            <span class="alert-badge" *ngIf="getAlertCount() > 0">
+              {{ getAlertCount() }}
+            </span>
+          </button>
+          <div *ngIf="dropdownOpen" class="dropdown-content1">
+            <ul>
+              <li *ngIf="getAlertCount() === 0" class="no-alerts-message">Aucun alert</li>
+              <li><button *ngIf="getAlertCount() > 0" (click)="clearAlerts()" class="clear-alerts-button">
+                Clear Alerts
+              </button></li>
+              <li *ngFor="let alert of getAlerts()" class="alert-item">{{ alert }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="aide" routerLink="/help">Aide</a>
+      </div>
+      <div *ngIf="!currentUser">
+        <ng-container *ngIf="!isHomeComponent()">
+          <input type="text" placeholder="Rechercher..." [(ngModel)]="searchTerm" (input)="onSearch()" class="search">
+          <ul *ngIf="searchTerm && filteredEncheres.length > 0" class="list1">
+            <div class="list">
+              <li *ngFor="let enchere of filteredEncheres" [ngClass]="{'inactive': enchere.status === 'inactive'}">
+                <a (click)="onSelectEnchere(enchere)">
+                  <h3>{{ enchere.nom }}</h3>
+                </a>
+              </li>
+            </div>
+          </ul>
+
+          <p *ngIf="searchTerm && filteredEncheres.length === 0" style="position: absolute;color: #888;font-style: italic;text-align: center;">Aucun résultat trouvé</p>
+        </ng-container>
+        <a class="signup" routerLink="/Inscription">S'inscrire</a>
+        <a class="signin" routerLink="/Connexion">Se Connecter</a>
+        <a class="aide" routerLink="/help">Aide</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <ul>
+      <li><a routerLink="/DerniereEnchere"><b>Dernières Enchères</b></a></li>
+      <li><a routerLink="/ArticleTendance"><b>Article Tendance</b></a></li>
+      <li><a routerLink="/CategoriePage"><b>Explorez les catégories</b></a></li>
+    </ul>
+  </div>
+  <div *ngIf="showLoading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="create-auction-button" *ngIf="currentUser">
+    <a routerLink="/CreateEnchere" class="create-button">
+      <span class="plus-icon">+</span>
+      <span class="tooltip">Tu veux créer une enchère ?</span>
+    </a>
+  </div>
+
+
+
+  <router-outlet></router-outlet>
+  <footer>
+    <h4>Copyright © Souq Albia 2024</h4>
+  </footer>
+</div>
