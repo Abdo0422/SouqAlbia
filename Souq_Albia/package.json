@@ -21,6 +21,7 @@
     "@stripe/stripe-js": "^4.4.0",
     "lodash": "^4.17.21",
     "rxjs": "~7.8.0",
+    "souq-albia": "file:",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
