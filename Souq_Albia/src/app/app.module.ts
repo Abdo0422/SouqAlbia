@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EnchereService } from './services/enchere.service';
@@ -34,44 +34,37 @@ import { ReportsComponent } from './admin/reports/reports.component';
 import { TransactionsComponent } from './admin/transactions/transactions.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    InscriptionComponent,
-    ConnexionComponent,
-    HomeComponent,
-    CatgoriePageComponent,
-    DerniereEnchereComponent,
-    ArticleTendanceComponent,
-    SousCategoriePageComponent,
-    EncherePageComponent,
-    UserSpaceComponent,
-    ProfileComponent,
-    HistoriqueComponent,
-    FavorisComponent,
-    MesEncheresComponent,
-    CommentairesComponent,
-    TableauDeBordComponent,
-    ChatroomComponent,
-    CreateEnchereComponent,
-    ObjetsGagnesComponent,
-    WatchlistPopupComponent,
-    AideComponent,
-    AdminComponent,
-    ManageUsersComponent,
-    ManageEncheresComponent,
-    ReportsComponent,
-    TransactionsComponent,
-    TermsAndConditionsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  providers: [EnchereService, provideAnimationsAsync()],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        InscriptionComponent,
+        ConnexionComponent,
+        HomeComponent,
+        CatgoriePageComponent,
+        DerniereEnchereComponent,
+        ArticleTendanceComponent,
+        SousCategoriePageComponent,
+        EncherePageComponent,
+        UserSpaceComponent,
+        ProfileComponent,
+        HistoriqueComponent,
+        FavorisComponent,
+        MesEncheresComponent,
+        CommentairesComponent,
+        TableauDeBordComponent,
+        ChatroomComponent,
+        CreateEnchereComponent,
+        ObjetsGagnesComponent,
+        WatchlistPopupComponent,
+        AideComponent,
+        AdminComponent,
+        ManageUsersComponent,
+        ManageEncheresComponent,
+        ReportsComponent,
+        TransactionsComponent,
+        TermsAndConditionsComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [EnchereService, provideAnimationsAsync(), provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

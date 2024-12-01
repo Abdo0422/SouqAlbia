@@ -4,7 +4,7 @@ import { ActivatedRoute , Router } from '@angular/router';
 import { CategorieService } from '../../services/categorie.service';
 import { Enchere } from '../../../model/Enchere';
 import { AuthenticationService } from '../../services/authentication.service';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { AlertServicesService } from '../../services/alert-services.service';
 @Component({
   selector: 'app-enchere-page',
