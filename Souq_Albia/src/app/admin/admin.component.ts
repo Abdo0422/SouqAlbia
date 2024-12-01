@@ -6,9 +6,10 @@ import { Enchere } from '../../model/Enchere';
 import { Transaction } from '../../model/transaction';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+    selector: 'app-admin',
+    templateUrl: './admin.component.html',
+    styleUrls: ['./admin.component.css'],
+    standalone: false
 })
 export class AdminComponent implements OnInit {
   users: User[] = [];

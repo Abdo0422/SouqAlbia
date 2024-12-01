@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
-  selector: 'app-commentaires',
-  templateUrl: './commentaires.component.html',
-  styleUrls: ['./commentaires.component.css']
+    selector: 'app-commentaires',
+    templateUrl: './commentaires.component.html',
+    styleUrls: ['./commentaires.component.css'],
+    standalone: false
 })
 export class CommentairesComponent implements OnInit {
   comments: any[] = [];

@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-catgorie-page',
-  templateUrl: './catgorie-page.component.html',
-  styleUrls: ['./catgorie-page.component.css']
+    selector: 'app-catgorie-page',
+    templateUrl: './catgorie-page.component.html',
+    styleUrls: ['./catgorie-page.component.css'],
+    standalone: false
 })
 export class CatgoriePageComponent implements OnInit {
   sousCategories: SousCategorie[] = [];

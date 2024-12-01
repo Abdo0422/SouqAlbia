@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-historique',
-  templateUrl: './historique.component.html',
-  styleUrl: './historique.component.css'
+    selector: 'app-historique',
+    templateUrl: './historique.component.html',
+    styleUrl: './historique.component.css',
+    standalone: false
 })
 export class HistoriqueComponent implements OnInit {
   constructor(  private router: Router,  private authService: AuthenticationService) {}

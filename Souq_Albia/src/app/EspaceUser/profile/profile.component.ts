@@ -4,9 +4,10 @@ import { User } from '../../../model/User';
 import { AlertServicesService } from '../../services/alert-services.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrls: ['./profile.component.css'],
+    standalone: false
 })
 export class ProfileComponent implements OnInit {
   user: User = new User();

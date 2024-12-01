@@ -7,9 +7,10 @@ import { Categorie } from '../../../model/Categorie';
 import { Enchere } from './../../../model/Enchere';
 
 @Component({
-  selector: 'app-sous-categorie-page',
-  templateUrl: './sous-categorie-page.component.html',
-  styleUrls: ['./sous-categorie-page.component.css']
+    selector: 'app-sous-categorie-page',
+    templateUrl: './sous-categorie-page.component.html',
+    styleUrls: ['./sous-categorie-page.component.css'],
+    standalone: false
 })
 export class SousCategoriePageComponent implements OnInit {
   selectedSousCategorie: SousCategorie | null = null;

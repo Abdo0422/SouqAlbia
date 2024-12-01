@@ -5,9 +5,10 @@ import { Enchere } from '../../../model/Enchere';
 import { EnchereService } from '../../services/enchere.service';
 import { AlertServicesService } from '../../services/alert-services.service';
 @Component({
-  selector: 'app-mes-encheres',
-  templateUrl: './mes-encheres.component.html',
-  styleUrls: ['./mes-encheres.component.css']
+    selector: 'app-mes-encheres',
+    templateUrl: './mes-encheres.component.html',
+    styleUrls: ['./mes-encheres.component.css'],
+    standalone: false
 })
 export class MesEncheresComponent implements OnInit {
   enchereList: Enchere[] = []; 

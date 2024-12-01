@@ -7,9 +7,11 @@ import { EnchereService } from '../../services/enchere.service'; // Import Enche
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-article-tendance',
-  templateUrl: './article-tendance.component.html',
-  styleUrls: ['./article-tendance.component.css'] // Fixed the property name from styleUrl to styleUrls
+    selector: 'app-article-tendance',
+    templateUrl: './article-tendance.component.html',
+    styleUrls: ['./article-tendance.component.css'] // Fixed the property name from styleUrl to styleUrls
+    ,
+    standalone: false
 })
 export class ArticleTendanceComponent implements OnInit {
   showSubCategories: boolean = false;

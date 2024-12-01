@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 import { SousCategorie } from '../../../model/SousCategorie';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   enchereDataCours: Enchere[] = [];

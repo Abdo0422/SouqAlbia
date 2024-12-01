@@ -4,9 +4,10 @@ import { AuthenticationService } from './../../services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-favoris',
-  templateUrl: './favoris.component.html',
-  styleUrls: ['./favoris.component.css']
+    selector: 'app-favoris',
+    templateUrl: './favoris.component.html',
+    styleUrls: ['./favoris.component.css'],
+    standalone: false
 })
 export class FavorisComponent implements OnInit {
   watchlist: Enchere[] = [];

@@ -6,9 +6,10 @@ import { AlertServicesService } from '../../services/alert-services.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-objets-gagnes',
-  templateUrl: './objets-gagnes.component.html',
-  styleUrls: ['./objets-gagnes.component.css'],
+    selector: 'app-objets-gagnes',
+    templateUrl: './objets-gagnes.component.html',
+    styleUrls: ['./objets-gagnes.component.css'],
+    standalone: false
 })
 export class ObjetsGagnesComponent implements OnInit {
   auctions: Enchere[] = [];

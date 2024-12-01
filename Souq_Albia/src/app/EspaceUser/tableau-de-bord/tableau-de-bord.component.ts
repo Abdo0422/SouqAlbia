@@ -3,9 +3,10 @@ import { EnchereService } from '../../services/enchere.service';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
-  selector: 'app-tableau-de-bord',
-  templateUrl: './tableau-de-bord.component.html',
-  styleUrls: ['./tableau-de-bord.component.css']
+    selector: 'app-tableau-de-bord',
+    templateUrl: './tableau-de-bord.component.html',
+    styleUrls: ['./tableau-de-bord.component.css'],
+    standalone: false
 })
 export class TableauDeBordComponent implements OnInit {
   disponibles: number = 0;

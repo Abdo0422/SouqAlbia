@@ -3,9 +3,10 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { User } from '../../../model/User';
 import { AlertServicesService } from '../../services/alert-services.service';
 @Component({
-  selector: 'app-inscription',
-  templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.css']
+    selector: 'app-inscription',
+    templateUrl: './inscription.component.html',
+    styleUrls: ['./inscription.component.css'],
+    standalone: false
 })
 export class InscriptionComponent implements OnInit {
   user: User = new User();

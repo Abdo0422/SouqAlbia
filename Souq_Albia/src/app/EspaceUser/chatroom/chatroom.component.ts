@@ -29,9 +29,10 @@ interface SendMessageResponse {
 }
 
 @Component({
-  selector: "app-chatroom",
-  templateUrl: "./chatroom.component.html",
-  styleUrls: ["./chatroom.component.css"],
+    selector: "app-chatroom",
+    templateUrl: "./chatroom.component.html",
+    styleUrls: ["./chatroom.component.css"],
+    standalone: false
 })
 export class ChatroomComponent implements OnInit {
   users: User[] = [];

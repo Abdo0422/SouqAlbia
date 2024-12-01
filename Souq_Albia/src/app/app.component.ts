@@ -14,9 +14,10 @@ import { AlertServicesService } from './services/alert-services.service';
 import { WatchlistPopupComponent } from './watchlist-popup/watchlist-popup.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent implements OnInit {
   title = 'Souq_Albia';

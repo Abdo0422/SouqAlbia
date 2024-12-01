@@ -4,9 +4,10 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-watchlist-popup',
-  templateUrl: './watchlist-popup.component.html',
-  styleUrls: ['./watchlist-popup.component.css']
+    selector: 'app-watchlist-popup',
+    templateUrl: './watchlist-popup.component.html',
+    styleUrls: ['./watchlist-popup.component.css'],
+    standalone: false
 })
 export class WatchlistPopupComponent {
   watchlist: Enchere[] = [];

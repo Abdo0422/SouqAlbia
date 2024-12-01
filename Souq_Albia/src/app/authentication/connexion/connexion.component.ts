@@ -4,9 +4,10 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
 import { AlertServicesService } from '../../services/alert-services.service';
 @Component({
-  selector: 'app-connexion',
-  templateUrl: './connexion.component.html',
-  styleUrls: ['./connexion.component.css']
+    selector: 'app-connexion',
+    templateUrl: './connexion.component.html',
+    styleUrls: ['./connexion.component.css'],
+    standalone: false
 })
 export class ConnexionComponent implements OnInit {
   loginForm: FormGroup;

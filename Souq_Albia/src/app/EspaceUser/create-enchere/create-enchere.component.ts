@@ -9,9 +9,10 @@ import { AlertServicesService } from "../../services/alert-services.service";
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-enchere',
-  templateUrl: './create-enchere.component.html',
-  styleUrls: ['./create-enchere.component.css']
+    selector: 'app-create-enchere',
+    templateUrl: './create-enchere.component.html',
+    styleUrls: ['./create-enchere.component.css'],
+    standalone: false
 })
 export class CreateEnchereComponent {
   enchere: Enchere = new Enchere();

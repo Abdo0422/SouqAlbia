@@ -7,9 +7,10 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { AlertServicesService } from '../../services/alert-services.service';
 @Component({
-  selector: 'app-enchere-page',
-  templateUrl: './enchere-page.component.html',
-  styleUrls: ['./enchere-page.component.css']
+    selector: 'app-enchere-page',
+    templateUrl: './enchere-page.component.html',
+    styleUrls: ['./enchere-page.component.css'],
+    standalone: false
 })
 export class EncherePageComponent implements OnInit {
   subcategoryName: string = '';

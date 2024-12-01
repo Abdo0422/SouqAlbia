@@ -7,9 +7,11 @@ import { CategorieService } from '../../services/categorie.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-derniere-enchere',
-  templateUrl: './derniere-enchere.component.html',
-  styleUrls: ['./derniere-enchere.component.css'] // Ensure this points to the correct stylesheet
+    selector: 'app-derniere-enchere',
+    templateUrl: './derniere-enchere.component.html',
+    styleUrls: ['./derniere-enchere.component.css'] // Ensure this points to the correct stylesheet
+    ,
+    standalone: false
 })
 export class DerniereEnchereComponent implements OnInit {
   latestEncheres: Enchere[] = [];

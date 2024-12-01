@@ -3,9 +3,10 @@ import { Enchere } from '../../../model/Enchere';
 import { EnchereService } from '../../services/enchere.service';
 
 @Component({
-  selector: 'app-manage-encheres',
-  templateUrl: './manage-encheres.component.html',
-  styleUrls: ['./manage-encheres.component.css']
+    selector: 'app-manage-encheres',
+    templateUrl: './manage-encheres.component.html',
+    styleUrls: ['./manage-encheres.component.css'],
+    standalone: false
 })
 export class ManageEncheresComponent implements OnInit {
   encheres: Enchere[] = [];
